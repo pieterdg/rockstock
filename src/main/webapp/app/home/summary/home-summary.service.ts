@@ -11,15 +11,15 @@ export class HomeSummaryService {
 
     constructor( protected http: HttpClient ) { }
 
-    countCountries(): Observable<HttpResponse<number>> {
-        return this.http.get<number>( `${this.resourceUrl}/countries/count`, { observe: 'response' } );
+    countCountries(): Observable<HttpResponse<Number>> {
+        return this.http.get<Number>( `${this.resourceUrl}/countries/count`, { observe: 'response' } );
     }
 
-    countMinerals(): Observable<HttpResponse<number>> {
-        return this.http.get<number>( `${this.resourceUrl}/minerals/count`, { observe: 'response' } );
+    countMinerals(): Observable<HttpResponse<Number>> {
+        return this.http.get<Number>( `${this.resourceUrl}/minerals/count`, { observe: 'response' } );
     }
 
-    countSpecimen(): Observable<HttpResponse<number>> {
-        return this.http.get<number>( `${this.resourceUrl}/specimen/count`, { observe: 'response' } );
+    countSpecimen(): Observable<HttpResponse<Number>> {
+        return this.http.get<Number>( `${this.resourceUrl}/specimen/count`, { observe: 'response' } );
     }
 }

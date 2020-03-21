@@ -13,6 +13,7 @@ import { Account } from 'app/core/user/account.model';
 export class HomeComponent implements OnInit, OnDestroy {
   account: Account | null = null;
   authSubscription?: Subscription;
+  searchText: String = "";
 
   constructor(private accountService: AccountService, private loginModalService: LoginModalService) {}
 
@@ -33,4 +34,16 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.authSubscription.unsubscribe();
     }
   }
-}
+  
+  search(): void {
+      //        this.searchService.search( this.searchText ).subscribe(
+      //            ( res: HttpResponse<ISearchResult[]> ) => this.onGetSearchResults( res.body ), ( res: HttpErrorResponse ) => this.onGetSearchError() );
+  }
+
+  //    protected onGetSearchResults( results: ISearchResult[] ) {
+  //        this.searchResults = results;
+  //    }
+  //
+  //    protected onGetSearchError() {
+  //    }
+  }
