@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.piedere.rockstock",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "monolith",
+    "baseName": "rockstock",
+    "packageName": "org.piedere.rockstock",
+    "packageFolder": "org/piedere/rockstock",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmRhMjc1YTFjZTZlYmI3M2JhNjgxMGIxNTIyMzMzNGMzYzFlN2NiN2Y5ZTM1YmI0ZWE0NjdiNzkxMjkxMjAxZDMyYzc0NWJlYTNkZjIzYjNhMDA3ZTEzNGE5NjU5ZGY3YmZhNjM0NDM2MzkxODFjM2MyM2ZjNzkzZDAyZDgxYTA=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1581767206173,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "nl"],
+    "blueprints": []
+  }
+}

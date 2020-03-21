@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+    <property name="clobType" value="longvarchar" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154300_added_entity_Specimen.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154400_added_entity_SpecimenStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154500_added_entity_Mineral.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154600_added_entity_Series.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154700_added_entity_Picture.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154800_added_entity_NickelStrunzLevelOne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154900_added_entity_NickelStrunzLevelTwo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215155000_added_entity_NickelStrunzLevelThree.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215155100_added_entity_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215155200_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200215154300_added_entity_constraints_Specimen.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154500_added_entity_constraints_Mineral.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154600_added_entity_constraints_Series.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154700_added_entity_constraints_Picture.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215154900_added_entity_constraints_NickelStrunzLevelTwo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215155000_added_entity_constraints_NickelStrunzLevelThree.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200215155100_added_entity_constraints_Location.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

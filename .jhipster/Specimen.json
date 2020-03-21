@@ -1,0 +1,82 @@
+{
+    "name": "Specimen",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "acquiredDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "acquiredAt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "acquiredPrice",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "acquiredBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "acquiredFrom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "remark",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fluorescent",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "specimenStatus",
+            "otherEntityRelationshipName": "specimen",
+            "relationshipName": "status",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "specimen",
+            "relationshipName": "location",
+            "otherEntityField": "shortName"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "mineral",
+            "otherEntityRelationshipName": "specimens",
+            "relationshipName": "minerals",
+            "otherEntityField": "dutchName",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "series",
+            "otherEntityRelationshipName": "specimen",
+            "relationshipName": "series",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200215154300",
+    "entityTableName": "specimen",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

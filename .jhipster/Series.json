@@ -1,0 +1,36 @@
+{
+    "name": "Series",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "specimen",
+            "otherEntityRelationshipName": "series",
+            "relationshipName": "specimen",
+            "otherEntityField": "code",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200215154600",
+    "entityTableName": "series",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

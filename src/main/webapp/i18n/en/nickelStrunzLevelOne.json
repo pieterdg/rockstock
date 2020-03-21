@@ -1,0 +1,23 @@
+{
+  "rockstockApp": {
+    "nickelStrunzLevelOne": {
+      "home": {
+        "title": "Nickel Strunz Level Ones",
+        "createLabel": "Create a new Nickel Strunz Level One",
+        "createOrEditLabel": "Create or edit a Nickel Strunz Level One",
+        "notFound": "No Nickel Strunz Level Ones found"
+      },
+      "created": "A new Nickel Strunz Level One is created with identifier {{ param }}",
+      "updated": "A Nickel Strunz Level One is updated with identifier {{ param }}",
+      "deleted": "A Nickel Strunz Level One is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Nickel Strunz Level One {{ id }}?"
+      },
+      "detail": {
+        "title": "Nickel Strunz Level One"
+      },
+      "code": "Code",
+      "name": "Name"
+    }
+  }
+}

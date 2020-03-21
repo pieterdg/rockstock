@@ -1,0 +1,43 @@
+{
+    "name": "NickelStrunzLevelThree",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "shortName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "nickelStrunzLevelTwo",
+            "otherEntityRelationshipName": "nickelStrunzLevelThree",
+            "relationshipValidateRules": "required",
+            "relationshipName": "parent",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200215155000",
+    "entityTableName": "nickel_strunz_level_three",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

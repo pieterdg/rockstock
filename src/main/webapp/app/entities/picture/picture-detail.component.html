@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="picture">
+            <h2><span jhiTranslate="rockstockApp.picture.detail.title">Picture</span> {{ picture.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rockstockApp.picture.data">Data</span></dt>
+                <dd>
+                    <div *ngIf="picture.data">
+                        <a (click)="openFile(picture.dataContentType!, picture.data)">
+                            <img [src]="'data:' + picture.dataContentType + ';base64,' + picture.data" style="max-width: 100%;" alt="picture image"/>
+                        </a>
+                        {{ picture.dataContentType }}, {{ byteSize(picture.data) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.picture.description">Description</span></dt>
+                <dd>
+                    <span>{{ picture.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.picture.specimen">Specimen</span></dt>
+                <dd>
+                    <div *ngIf="picture.specimenId">
+                        <a [routerLink]="['/specimen', picture.specimenId, 'view']">{{ picture.specimenCode }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.picture.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="picture.locationId">
+                        <a [routerLink]="['/location', picture.locationId, 'view']">{{ picture.locationShortName }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/picture', picture.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

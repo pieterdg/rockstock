@@ -1,0 +1,22 @@
+{
+  "rockstockApp": {
+    "specimenStatus": {
+      "home": {
+        "title": "Specimen Statuses",
+        "createLabel": "Maak een nieuwe Specimen Status",
+        "createOrEditLabel": "Maak of wijzig een Specimen Status",
+        "notFound": "No Specimen Statuses found"
+      },
+      "created": "A new Specimen Status is created with identifier {{ param }}",
+      "updated": "A Specimen Status is updated with identifier {{ param }}",
+      "deleted": "A Specimen Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Specimen Status {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Specimen Status"
+      },
+      "name": "Name"
+    }
+  }
+}

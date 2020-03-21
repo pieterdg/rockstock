@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="nickelStrunzLevelTwo">
+            <h2><span jhiTranslate="rockstockApp.nickelStrunzLevelTwo.detail.title">Nickel Strunz Level Two</span> {{ nickelStrunzLevelTwo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rockstockApp.nickelStrunzLevelTwo.code">Code</span></dt>
+                <dd>
+                    <span>{{ nickelStrunzLevelTwo.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.nickelStrunzLevelTwo.name">Name</span></dt>
+                <dd>
+                    <span>{{ nickelStrunzLevelTwo.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.nickelStrunzLevelTwo.parent">Parent</span></dt>
+                <dd>
+                    <div *ngIf="nickelStrunzLevelTwo.parentId">
+                        <a [routerLink]="['/nickel-strunz-level-one', nickelStrunzLevelTwo.parentId, 'view']">{{ nickelStrunzLevelTwo.parentName }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/nickel-strunz-level-two', nickelStrunzLevelTwo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
