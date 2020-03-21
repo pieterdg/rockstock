@@ -7,6 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entiteiten",
+        "specimen": "Specimen",
+        "specimenStatus": "Specimen Status",
+        "mineral": "Mineral",
+        "series": "Series",
+        "picture": "Picture",
+        "nickelStrunzLevelOne": "Nickel Strunz Level One",
+        "nickelStrunzLevelTwo": "Nickel Strunz Level Two",
+        "nickelStrunzLevelThree": "Nickel Strunz Level Three",
+        "location": "Location",
+        "country": "Country",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

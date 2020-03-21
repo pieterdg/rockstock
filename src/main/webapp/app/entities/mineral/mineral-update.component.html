@@ -1,0 +1,132 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-mineral-heading" jhiTranslate="rockstockApp.mineral.home.createOrEditLabel">Create or edit a Mineral</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.mineral.dutchName" for="field_dutchName">Dutch Name</label>
+                    <input type="text" class="form-control" name="dutchName" id="field_dutchName"
+                           formControlName="dutchName"/>
+                    <div *ngIf="editForm.get('dutchName')!.invalid && (editForm.get('dutchName')!.dirty || editForm.get('dutchName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dutchName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.mineral.formula" for="field_formula">Formula</label>
+                    <input type="text" class="form-control" name="formula" id="field_formula"
+                           formControlName="formula"/>
+                    <div *ngIf="editForm.get('formula')!.invalid && (editForm.get('formula')!.dirty || editForm.get('formula')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('formula')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.mineral.hardnessMin" for="field_hardnessMin">Hardness Min</label>
+                    <input type="number" class="form-control" name="hardnessMin" id="field_hardnessMin"
+                           formControlName="hardnessMin"/>
+                    <div *ngIf="editForm.get('hardnessMin')!.invalid && (editForm.get('hardnessMin')!.dirty || editForm.get('hardnessMin')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('hardnessMin')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('hardnessMin')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.mineral.hardnessMax" for="field_hardnessMax">Hardness Max</label>
+                    <input type="number" class="form-control" name="hardnessMax" id="field_hardnessMax"
+                           formControlName="hardnessMax"/>
+                    <div *ngIf="editForm.get('hardnessMax')!.invalid && (editForm.get('hardnessMax')!.dirty || editForm.get('hardnessMax')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('hardnessMax')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('hardnessMax')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.mineral.crystalSystem" for="field_crystalSystem">Crystal System</label>
+                    <input type="text" class="form-control" name="crystalSystem" id="field_crystalSystem"
+                           formControlName="crystalSystem"/>
+                    <div *ngIf="editForm.get('crystalSystem')!.invalid && (editForm.get('crystalSystem')!.dirty || editForm.get('crystalSystem')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('crystalSystem')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.mineral.nickelStruntzLevelFour" for="field_nickelStruntzLevelFour">Nickel Struntz Level Four</label>
+                    <input type="text" class="form-control" name="nickelStruntzLevelFour" id="field_nickelStruntzLevelFour"
+                           formControlName="nickelStruntzLevelFour"/>
+                    <div *ngIf="editForm.get('nickelStruntzLevelFour')!.invalid && (editForm.get('nickelStruntzLevelFour')!.dirty || editForm.get('nickelStruntzLevelFour')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nickelStruntzLevelFour')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.mineral.mindatUrl" for="field_mindatUrl">Mindat Url</label>
+                    <input type="text" class="form-control" name="mindatUrl" id="field_mindatUrl"
+                           formControlName="mindatUrl"/>
+                    <div *ngIf="editForm.get('mindatUrl')!.invalid && (editForm.get('mindatUrl')!.dirty || editForm.get('mindatUrl')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mindatUrl')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.mineral.nickelStrunzLevelThree" for="field_nickelStrunzLevelThree">Nickel Strunz Level Three</label>
+                    <select class="form-control" id="field_nickelStrunzLevelThree" name="nickelStrunzLevelThree" formControlName="nickelStrunzLevelThreeId">
+                        <option *ngIf="!editForm.get('nickelStrunzLevelThreeId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="nickelStrunzLevelThreeOption.id" *ngFor="let nickelStrunzLevelThreeOption of nickelstrunzlevelthrees; trackBy: trackById">{{ nickelStrunzLevelThreeOption.name }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('nickelStrunzLevelThreeId')!.invalid && (editForm.get('nickelStrunzLevelThreeId')!.dirty || editForm.get('nickelStrunzLevelThreeId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('nickelStrunzLevelThreeId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

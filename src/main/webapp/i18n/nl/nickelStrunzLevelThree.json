@@ -1,0 +1,25 @@
+{
+  "rockstockApp": {
+    "nickelStrunzLevelThree": {
+      "home": {
+        "title": "Nickel Strunz Level Threes",
+        "createLabel": "Maak een nieuwe Nickel Strunz Level Three",
+        "createOrEditLabel": "Maak of wijzig een Nickel Strunz Level Three",
+        "notFound": "No Nickel Strunz Level Threes found"
+      },
+      "created": "A new Nickel Strunz Level Three is created with identifier {{ param }}",
+      "updated": "A Nickel Strunz Level Three is updated with identifier {{ param }}",
+      "deleted": "A Nickel Strunz Level Three is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Nickel Strunz Level Three {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Nickel Strunz Level Three"
+      },
+      "code": "Code",
+      "name": "Name",
+      "shortName": "Short Name",
+      "parent": "Parent"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Location",
+    "fields": [
+        {
+            "fieldName": "shortName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "stateProvince",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mine",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "xPosition",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "yPosition",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "country",
+            "otherEntityRelationshipName": "location",
+            "relationshipName": "country",
+            "otherEntityField": "countryName"
+        }
+    ],
+    "changelogDate": "20200215155100",
+    "entityTableName": "location",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

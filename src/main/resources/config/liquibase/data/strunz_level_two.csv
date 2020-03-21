@@ -1,0 +1,74 @@
+id;code;name;parent_id
+1;A;Metallic and intermetallic compounds, Carbides, Nitrides, Phosphides and Silicides;1
+2;B;Semimetals and nonmetals;1
+3;X;Unclassified elements;1
+4;A;Alloys and alloy-like compounds, with Cu, Ag, Au and Ni;2
+5;B;Sulphides with metal: sulphur, selenium and tellurium > 1:1, Copper sulphides - Chalcocite group;2
+6;C;Sulphides with metal: sulphur, selenium and tellurium = 1:1;2
+7;D;Sulphides with metal: sulphur, selenium and tellurium < 1:1, Tellurides with Copper, Silver, Gold;2
+8;E;Sulphosalts (S : As,Sb,Bi = x), Sulphosalts with predominant Fe and Cu and x = 2.0;2
+9;F;Sulphides with nonmetallic properties, Arsenic-Sulphides;2
+10;X;Unclassified sulphides and sulphosalts;2
+11;A;Simple halogenides, without water Metal : Halogen = 1 : 1;3
+12;B;Double halogenides without water, with [BF4]1-,[SiF6]2- and [AlF6]3-;3
+13;C;Double halogenides with water, Fluorides;3
+14;D;Oxi-halogenides with Mg - Mn - Cu - Zn - Sn;3
+15;X;Unclassified halogenides;3
+16;A;Oxides with metal : oxygen = 1:1 and 2:1 (M2O,MO);4
+17;C;Oxides with metal : oxygen = 3:4 (spinel type M3O4 and related), Alumina-Spinels;4
+18;C;Oxides with metal : oxygen = 2:3 (M2O3 and related compounds);4
+19;D;Oxides with metal : oxygen = 1:2 (MO2 and related compounds);4
+20;E;Oxides with metal : oxygen < 1:2 (M2O5, MO3);4
+21;F;Hydroxides and oxidic hydrates, water-bearing oxides with layered structure;4
+22;G;Vanadium oxides (with V4+/5+), group-vanadates;4
+23;H;Uranyl ([UO2]2+) hydroxides and hydrates;4
+24;J;Arsenides with [AsO3]3- groups;4
+25;K;Sulphides, selenides, tellurides with [XO3]2- groups and related structures;4
+26;L;Iodates with [IO3]1- groups;4
+27;X;Unclassified oxides;4
+28;A;Nitrates [NO3]1-;5
+29;C;Waterfree carbonates without unfamiliar anions;5
+30;C;Waterfree carbonates with unfamiliar anions;5
+31;D;Water-bearing carbonates without unfamiliar anions;5
+32;E;Water-bearing carbonates with unfamiliar anions;5
+33;F;Uranylcarbonates ([UO2]2+ - [CO3]2-);5
+34;G;Borates [BO3]3-;5
+35;H;Group borates. Planary groups [B2O5]4- to [B2O7]2-;5
+36;J;Chain borates with [B2O4]2- to [B6O10]2-;5
+37;K;Layered borates with complex groups [Bx(O,OH)y];5
+38;L;Shelly borates with [BO2]1- to [B6O10]2-;5
+39;X;Unclassified Strunz Nitrates, Carbonates and Borates;5
+40;A;Waterfree sulphates [SO4]2- without unfamiliar anions. cations of medium size;6
+41;C;Waterfree sulphates [SO4]2- with unfamiliar anions. cations of medium size;6
+42;C;Water-bearing sulphates without unfamiliar anions. cations of medium size;6
+43;D;Water-bearing sulphates with unfamiliar anions. cations of medium size;6
+44;F;Chromates [CrO4]2-;6
+45;G;Molybdates [MoO4]2- and wolframates [WO4]2-;6
+46;X;Unclassified sulphates, chromates, molybdates and tungstates;6
+47;A;Waterfree phosphates [PO4]3- without unfamiliar anions, cations of small size: Li, Be, Al;7
+48;B;Waterfree phosphates with unfamiliar anions F, Cl, O, OH. cations of very small size: Li, Be;7
+49;C;Water-bearing phosphates without unfamiliar anions. cations of medium and small size: Be and Mn, Fe, Cu, Zn, Mg;7
+50;D;Water-bearing phosphates with unfamiliar anions, mostly cations of small size: Be, Li;7
+51;E;Uranylphosphates and uranylvanadates with [UO2]2+ - [PO4 | AsO4]3- and [UO2]2+ - [V2O8]6-;7
+52;X;Unclassified Strunz Phosphates, Arsenates and Vanadates;7
+53;A;Nesosilicates, with [SiO4]4- groups, cations of tetrahedric orientation [4];8
+54;AX;Unclassified nesosilicates;8
+55;B;Nesosubsilicates, with anions unfamiliar to tetraheders, cations of octahedral and tetrahedral orientation [4/6];8
+56;C;Sorosilicates, with [Si2O7]6-, without anions unfamiliar to tetraheders;8
+57;CX;Unclassified sorosilicates;8
+58;D;Unclassified silicates, mostly cations of small size Mg, Fe, Mn, Cu;8
+59;DX;Unclassified silicates;8
+60;E;Cyclosilicates, triplet rings [Si3O9]6-;8
+61;EX;Unclassified cyclosilicates;8
+62;F;Inosilicates (chain and band) double chains [Si2O6]4-;8
+63;FX;Unclassified inosilicates;8
+64;G;Intermediate between chain- and layered silicates;8
+65;H;Phyllosilicates (layered), Tetragonal or pseudotetragonal layered structures [Si4O10]4- and others;8
+66;HX;Unclassified phyllosilicates;8
+67;J;Tectosilicates (network) without anions unfamiliar to the tetraheders;8
+68;JX;Unclassified tectosilicates;8
+69;A;Oxalates. Salts from organic acids. [C2O4]2- arranged after increasing cation size;9
+70;AX;Unclassified organic compounds;9
+71;B;Nitrogenfree compounds with C and water, chain structures;9
+72;C;Resins and other compounds;9
+73;D;Compounds with N, C and water;9

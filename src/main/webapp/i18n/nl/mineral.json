@@ -1,0 +1,30 @@
+{
+  "rockstockApp": {
+    "mineral": {
+      "home": {
+        "title": "Minerals",
+        "createLabel": "Maak een nieuwe Mineral",
+        "createOrEditLabel": "Maak of wijzig een Mineral",
+        "notFound": "No Minerals found"
+      },
+      "created": "A new Mineral is created with identifier {{ param }}",
+      "updated": "A Mineral is updated with identifier {{ param }}",
+      "deleted": "A Mineral is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Mineral {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Mineral"
+      },
+      "dutchName": "Dutch Name",
+      "formula": "Formula",
+      "hardnessMin": "Hardness Min",
+      "hardnessMax": "Hardness Max",
+      "crystalSystem": "Crystal System",
+      "nickelStruntzLevelFour": "Nickel Struntz Level Four",
+      "mindatUrl": "Mindat Url",
+      "nickelStrunzLevelThree": "Nickel Strunz Level Three",
+      "specimens": "Specimens"
+    }
+  }
+}

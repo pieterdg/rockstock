@@ -1,0 +1,335 @@
+id;code;name;parent_id;;
+1;01;Series Copper, Silver and Gold;1;;
+2;02;Mercury and Amalgam series;1;;
+3;03;Aluminium - Khatyrkite series;1;;
+4;04;Zinc-Cadmium series;1;;
+5;05;Lead series;1;;
+6;06;Chromium series, Titanium-Chromferides;1;;
+7;07;Iron series;1;;
+8;08;Nickel series;1;;
+9;09;Honquiite-Tantalcarbide series;1;;
+10;10;Osbornite-Sinoite series;1;;
+11;11;Barringerite-Schreibersite series;1;;
+12;12;Perryite-Ferdisilicite series;1;;
+13;13;Osmium series;1;;
+14;14;Platinum series;1;;
+15;15;Isoferroplatinum - Ferronickelplatinum series;1;;
+16;16;Zvyagintsevite - Plumbopalladinite series;1;;
+17;17;Paolovite - Thaimyrite series;1;;
+18;1/B.01;Arsenic-Bismuth series;2;;01
+19;1/B.02;Carbon series, Graphite - Lonsdaleite;2;;02
+20;1/B.03;Sulphur - Selenium series;2;;03
+21;1/B.05;Silicon series;2;;05
+22;1/X.00;Alloys;3;;00
+23;2/A.01;Algodonite - Cuprostibite series;4;;01
+24;2/A.02;Allargentum - Dyscrasite series;4;;02
+25;2/A.03;Bezsmertnovite - Maldonite series;4;;03
+26;2/A.04;Dienerite - Maucherite series;4;;04
+27;2/A.05;Atheneite - Genkinite series;4;;05
+28;2/A.06;Vasilite - Luberoite series;4;;06
+29;2/A.07;Telargpalite - Borovskite series;4;;07
+30;2/B.01;Chalcocite - Yarrowite series;5;;01
+31;2/B.02;Betechtinite - Bornite series;5;;02
+32;2/B.03;Bertzeliannite - Athabascaite series;5;;03
+33;2/B.04;Weissite - Richardite series;5;;04
+34;2/B.05;Achantite - Empresite series;5;;05
+35;2/B.06;Jalpaite - Imiterite series;5;;06
+36;2/B.07;Petrovskaite - Muthmannite series;5;;07
+37;2/B.08;Argyrodite - Canfieldite series;5;;08
+38;2/B.09;Danielsite - Furotobeite series;5;;09
+39;2/B.10;Petrovisite series;5;;10
+40;2/B.11;Carlinite series;5;;11
+41;2/B.12;Rhodplumsite - Oregonite series;5;;12
+42;2/B.13;Vozhminite series;5;;13
+43;2/B.14;Donharrisite series;5;;14
+44;2/B.15;Hauchecornite group;5;;15
+45;2/B.16;Pentlandite group;5;;16
+46;2/B.17;Mackinawite - Karaelakhite series;5;;17
+47;2/C.01;Sphalerite group and related compounds (with Leutite);6;;01
+48;2/C.02;Sphalerite group and related compounds (with Leutite);6;;02
+49;2/C.03;Chalcopyrite group and related compounds;6;;03
+50;2/C.04;Chalcopyrite group, Mooihoekite - Orickite series;6;;04
+51;2/C.05;Chalcopyrite group, Raguinite - Picotpaulite series;6;;05
+52;2/C.06;Stannite group;6;;06
+53;2/C.07;Stannite group, Stannoidite - Vinciennite series;6;;07
+54;2/C.08;Stannite group, Chatkalite - Mawsonite series;6;;08
+55;2/C.09;Stannite group, Hemusite - Kiddcreekite series;6;;09
+56;2/C.10;Stannite group, Germanite series;6;;10
+57;2/C.11;Tetrahedrite group;6;;11
+58;2/C.12;Tetrahedrite group, Watanabeite - Gruzdevite series;6;;12
+59;2/C.13;Wurtzite series;6;;13
+60;2/C.14;Cubanite series;6;;14
+61;2/C.15;Galenite group;6;;15
+62;2/C.16;Miargyrite - Volynskite series;6;;16
+63;2/C.17;Hertzenbergite - Kylindrite series;6;;17
+64;2/C.18;Cinnabarite - Hypercinnabarite series;6;;18
+65;2/C.19;Troilite - Pyrrhotite - Haideite series;6;;19
+66;2/C.20;Nickeline group and related compounds, Polarite - Cherepanovite series;6;;20
+67;2/C.21;Millerite series;6;;21
+68;2/C.22;Covellite series;6;;22
+69;2/C.23;Yushkinite - Vyalsovite series;6;;23
+70;2/C.24;Vulkanite series;6;;24
+71;2/C.25;Vysotskite - Cooperite series;6;;25
+72;2/D.01;Linneite group and related compounds;7;;01
+73;2/D.02;Dayingite - Xingzhongite series;7;;02
+74;2/D.03;Inaglyite ? series;7;;03
+75;2/D.05;Bretzinaite ? series;7;;05
+76;2/D.06;Kashinite series;7;;06
+77;2/D.07;Paxite series;7;;07
+78;2/D.08;Stibnite - Bismuthinite series;7;;08
+79;2/D.09;Tetradymite group, Tellurantimony - Kawazulite series;7;;09
+80;2/D.10;Tetradymite group, Nevskite - Tsumoite series;7;;10
+81;2/D.11;Tetradymite group, Ikunolite - Joseite-B series;7;;11
+82;2/D.12;Tetradymite group, Poubaite - Rucklidgeite series;7;;12
+83;2/D.13;Tetradymite group, Kochkarite - Hedleyite series;7;;13
+84;2/D.14;Cameronite series;7;;14
+85;2/D.15;Montbrayite - Buckhornite series;7;;15
+86;2/D.16;Kostovite - Calaverite series;7;;16
+87;2/D.17;Pyrite group and related compounds, Fukuchilite - Micherenite;7;;17
+88;2/D.18;Cobaltite group, Cobaltite - Ullmannite - Tolovkite series;7;;18
+89;2/D.19;Cobaltite group, Krutovite series;7;;19
+90;2/D.20;Markasite - Iridarsenite series;7;;20
+91;2/D.21;Borishanskiite -Urvantsevite series;7;;21
+92;2/D.22;Arsenopyrite series;7;;22
+93;2/D.23;L�llingite - Costibite series;7;;23
+94;2/D.24;Clinosafflorite - Paracostibite series;7;;24
+95;2/D.25;Molybdenite series;7;;25
+96;2/D.26;Molybdenite series;7;;26
+97;2/D.27;Bambolaite series;7;;27
+98;2/D.28;Melonite group, Berntdtite - Moncheite series;7;;28
+99;2/D.29;Skutterudite - Iridisite series;7;;29
+100;2/E.01;Berthierite - Garavellite series;8;;01
+101;2/E.02;Larosite series;8;;02
+102;2/E.03;Skinnerite - Wittichenite series;8;;03
+103;2/E.04;Chalcostibite - Hodrushite series;8;;04
+104;2/E.05;Billingsleyite - Polybasite series;8;;05
+105;2/E.06;Stefanite - Arcusbisite series;8;;06
+106;2/E.07;Proustite - Samsonite series;8;;07
+107;2/E.08;Treshmannite - Dervillite series;8;;08
+108;2/E.09;Benjaminite - Kitaibelite series;8;;09
+109;2/E.10;Fangite series;8;;10
+110;2/E.11;Galkhaiite series;8;;11
+111;2/E.12;Laffittite - Hatchite series;8;;12
+112;2/E.13;Livingstonite - Vaughanite series;8;;13
+113;2/E.14;Rebulite - Chabourneite series;8;;14
+114;2/E.15;Jordanite - Lengenbachite series;8;;15
+115;2/E.16;Seligmannite - Bournonite series;8;;16
+116;2/E.17;Marrite - Owyheeite series;8;;17
+117;2/E.18;Dufrenoysite - Veenite series;8;;18
+118;2/E.19;Falkmanite - Jaskolskiite series;8;;19
+119;2/E.20;Madocite - Dadsonite series;8;;20
+120;2/E.21;Rayite - F�l�ppite series;8;;21
+121;2/E.22;Jamesonite - Sakharovaite series;8;;22
+122;2/E.23;Uchucchacuaite - Roshchinite series;8;;23
+123;2/E.24;Baumhauerite - Robinsonite series;8;;24
+124;2/E.25;Liveingite - Twinnite series;8;;25
+125;2/E.26;Zinkenite series;8;;26
+126;2/E.27;Kirkiite series;8;;27
+127;2/E.28;Miharaite series;8;;28
+128;2/E.29;Aschamalmite - Heyrowskyite series;8;;29
+129;2/E.30;Aikinite - Pekoite series;8;;30
+130;2/E.31;Xilingolite - Gustavite series;8;;31
+131;2/E.32;Neyite series;8;;32
+132;2/E.33;Izoklakeite - Berryite series;8;;33
+133;2/E.34;Cosalite - Galenobismuthite;8;;34
+134;2/E.35;Ustarasite series;8;;35
+135;2/F.01;Patronite series;9;;01
+136;2/F.02;Duranusite - Jeromite series;9;;02
+137;2/F.03;Getchellite - Wakabayashilite series;9;;03
+138;2/F.04;Rohaite - Thalcusite series;9;;04
+139;2/F.05;Chvilevaite series;9;;05
+140;2/F.06;Djerfisherite - Thalfenisite series;9;;06
+141;2/F.07;Rasvumite - Bartonite series;9;;07
+142;2/F.08;Caswellsilverite - Sch�llhornite series;9;;08
+143;2/F.09;Erdite-Coyoteite series;9;;09
+144;2/F.10;Gerstleyite series;9;;10
+145;2/F.11;Kermesite - Cetineite series;9;;11
+146;2/F.12;Bazhenovite series;9;;12
+147;2/F.13;Capgaronnite-Perroudite series;9;;13
+148;2/F.14;Corderoite - Arzakite series;9;;14
+149;2/F.15;Kolarite - Radhakrishnaite series;9;;15
+150;2/X.00;Nickeline Group;10;;00
+151;3/A.01;Nantokite - Miersite series;11;;01
+152;3/A.02;Halite series Griceite - Bromargyrite;11;;02
+153;3/A.03;Jordargyrite - Tocornalite series;11;;03
+154;3/A.04;Salmiac;11;;04
+155;3/A.05;Calomel - Moschelite series;11;;05
+156;3/A.06;Sellaite series;11;;06
+157;3/A.07;Tolbachite series;11;;07
+158;3/A.08;Fluorite series and related compounds;11;;08
+159;3/A.09;Fluorite series and related compounds;11;;09
+160;3/A.10;Fluorite series and related compounds;11;;10
+161;3/A.11;Fluorite series and related compounds;11;;11
+162;3/A.12;Hydrohalite - Antarcticite series;11;;12
+163;3/A.13;Cadwaladerite - Hydromolysite series;11;;13
+164;3/B.01;Ferruccite - Barberiite series;12;;01
+165;3/B.02;Mallardite - Bararite series;12;;02
+166;3/B.03;Kryolithionite - Calcjarlite series;12;;03
+167;3/C.01;Gearksutite - Chukhrovite - (Ce) series;13;;01
+168;3/C.02;Pachnolite - Yaroslavite series;13;;02
+169;3/C.03;Prosopite - Boldyrevite series;13;;03
+170;3/C.04;Aravaipaite - Calcioaravaipaite series;13;;04
+171;3/C.05;Stenonite - Boggildite series;13;;05
+172;3/C.06;Rinneite - Kremersite series;13;;06
+173;3/C.07;Rinneite - Kremersite series;13;;07
+174;3/C.08;Redikortzevite - Tachyhydrite series;13;;08
+175;3/D.01;Atacamite series, Korshunovskite - Anthonyite;14;;01
+176;3/D.02;Atacamite series, Ponomarevite;14;;02
+177;3/D.03;Atacamite series, Claringbullite - Connellite;14;;03
+178;3/D.04;Atacamite series and related compounds;14;;04
+179;3/D.05;Atacamite series and related compounds;14;;05
+180;3/D.06;Terlinguaite - Comancheite;14;;06
+181;3/D.07;Kelyanite series;14;;07
+182;3/D.10;Cotunnite - Matlockite series;14;;10
+183;3/D.11;Mendipite - Onoratoite series;14;;11
+184;3/D.12;Boleite - Yedlinite series;14;;12
+185;3/X.00;Bromide;15;;00
+186;4/A.01;Ice;16;;01
+187;4/A.02;Cuprite series;16;;02
+188;4/A.03;Brommelite - Zincite series;16;;03
+189;4/A.04;Periclase Group, Periclase - Murdochite series;16;;04
+190;4/A.05;Periclase Group, Tenorite - Crednerite series;16;;05
+191;4/A.06;Periclase Group, Montroydite - Massicotite series;16;;06
+192;4/A.07;Periclase Group, Brownmillerite - Mayenite series;16;;07
+193;4/A.08;Periclase Group, Romarchite ? - Hydroromarchite ? series;16;;08
+194;4/B.01;Spinel group, Spinel - Gahnite series;17;;01
+195;4/B.02;Spinel group, Magnesioferrite - Franklinite series;17;;02
+196;4/B.03;Spinel group, Magnesio-chromite - Zinco-chromite series;17;;03
+197;4/B.04;Spinel group, Vuorelainenite - Brunogeierite series;17;;04
+198;4/B.05;Hausmannite - Filipstadite series;17;;05
+199;4/B.06;Trippkeite - Minium series;17;;06
+200;4/B.07;Chrysoberyl - Swedenborgite series;17;;07
+201;4/B.08;Diaoyudaoite series;17;;08
+202;4/B.09;Grossite series;17;;09
+203;4/C.01;Claudetite - Valentinite series;18;;01
+204;4/C.02;Arsenolite - Sillenite series;18;;02
+205;4/C.03;Bixbyite - Avicennite series;18;;03
+206;4/C.04;Hematite group;18;;04
+207;4/C.05;Ilmenite group, Geikilith - Brizziite series;18;;05
+208;4/C.06;Ilmenite group, Maghemite series;18;;06
+209;4/C.07;H�gbomite - Mengxianminite series;18;;07
+210;4/C.08;Yimngite - Otjisumeite series;18;;08
+211;4/C.09;Crichtonite group;18;;09
+212;4/C.10;Perowskite series;18;;10
+213;4/C.11;Stibiconite group, Partzite - Bindheimite series;18;;11
+214;4/C.12;Stibiconite group, Ingersonite series;18;;12
+215;4/C.13;Stibiconite group, Monimolite - Jixianite series;18;;13
+216;4/C.14;Stibiconite group, Murataite-Y - Scheteligite series;18;;14
+217;4/C.15;Pyrochlore group, Zirkelite - Zirconolite series;18;;15
+218;4/C.16;Pyrochlore group, Betafite series with Ti > (Nb,Ta);18;;16
+219;4/C.17;Pyrochlore group, Pyrochlore series with Nb > Ti;18;;17
+220;4/C.18;Pyrochlore group, Microlite series with Ta > Nb;18;;18
+221;4/C.19;Pyrochlore group and related compounds;18;;19
+222;4/C.20;Ferritungstite series;18;;20
+223;4/C.21;Parbariomicrolite series;18;;21
+224;4/C.22;Carboirite series;18;;22
+225;4/C.23;Hemloite - Derbylite series;18;;23
+226;4/C.24;Aramcolite - Arizonite series;18;;24
+227;4/C.25;Mongshanite - Kleberite series;18;;25
+228;4/C.26;Berdesinskiite - Stibivanite series;18;;26
+229;4/D.01;Quartz group;19;;01
+230;4/D.02;Rutile group, Rutile - Cassiterite - Platnerite series;19;;02
+231;4/D.03;Rutile group, Ilmenorutile - Str�verite series;19;;03
+232;4/D.04;Tapiolite group;19;;04
+233;4/D.05;Cafetite series;19;;05
+234;4/D.06;Belyankinite - Hochelagaite series;19;;06
+235;4/D.07;Cryptomelane group;19;;07
+236;4/D.08;Cryptomelane group;19;;08
+237;4/D.09;Todorokite - Romanechite series;19;;09
+238;4/D.10;Ramsdellite - Vernadite series;19;;10
+239;4/D.12;Rancieite - Takanelite series;19;;12
+240;4/D.13;Janggunite series;19;;13
+241;4/D.14;Anatase - Downeyite series;19;;14
+242;4/D.15;Brookite - Kuranakhite series;19;;15
+243;4/D.16;Wolframite series;19;;16
+244;4/D.17;Qitianglinite - Lithiowodginite series;19;;17
+245;4/D.18;Columbite series;19;;18
+246;4/D.19;Polycrase-(Y) - Loranskite-(Y) series;19;;19
+247;4/D.20;Kassite - Lucasite-(Ce) series;19;;20
+248;4/D.21;Aeschynite series;19;;21
+249;4/D.22;Thorutite - Orthobrannerite series;19;;22
+250;4/D.23;Petscheckite - Liandratite series;19;;23
+251;4/D.24;Fergusonite-(Y) - Formanite-(Y) series;19;;24
+252;4/D.25;Cervantite - Chiluite series;19;;25
+253;4/D.26;Lithiotantite - Cesplumtantite series;19;;26
+254;4/D.27;Bahianite - Sosedkoite series;19;;27
+255;4/D.28;Badleyite - Uraninite series, Tugarinovite;19;;28
+256;4/D.29;Badleyite - Uraninite series, Foordite - Thoreaulite;19;;29
+257;4/D.30;Badleyite - Uraninite series, Changbaite;19;;30
+258;4/D.31;Badleyite - Uraninite series;19;;31
+259;4/E.01;Tantite series;20;;01
+260;4/E.02;Tungstite - Cerotungstite-(Ce) series;20;;02
+261;4/E.03;Molybdite - Ilsemannite series;20;;03
+262;4/F.01;Sassolite - Clinobehoite series;21;;01
+263;4/F.02;Gibbsite - Doyleite series;21;;02
+264;4/F.03;Brucite series;21;;03
+265;4/F.04;Jamborite - Bottinoite series;21;;04
+266;4/F.05;Meixnerite - Muskoxite series;21;;05
+267;4/F.06;Diaspore - Goethite - Faitknechtite series;21;;06
+268;4/F.07;Lithiophorite - Grimaldiite series;21;;07
+269;4/F.08;Tivanite - Paramontroseite series (V3+ oxides);21;;08
+270;4/F.09;Akdalaite - Ferrihydrite series;21;;09
+271;4/F.10;Hydrokalumite series;21;;10
+272;4/F.11;Jiansuiite - Birnessite series;21;;11
+273;4/F.12;Cyanophillite - Cualstibite series;21;;12
+274;4/F.13;Shakhovite series;21;;13
+275;4/F.14;Quenselite series;21;;14
+276;4/F.15;S�hngeite - Bernalite series;21;;15
+277;4/F.16;Schoenfliesite group;21;;16
+278;4/F.17;Stottite group, Mopungite - Stottite series;21;;17
+279;4/F.18;Stottite group, Varlamoffite series;21;;18
+280;4/F.19;Stottite group, Kimrobinsonite series;21;;19
+281;4/G.01;Group vanadate: Huemulite - Sherwoodite series;22;;01
+282;4/G.02;Unclassified vanadates, Vanoxite;22;;02
+283;4/G.03;Unclassified vanadates, Kazakhstanite;22;;03
+284;4/G.04;Unclassified vanadates, Vanalite;22;;04
+285;4/G.05;Unclassified vanadates, Namibite;22;;05
+286;4/G.07;Navajoite-Metadelrioite series;22;;07
+287;4/G.08;Heggite - Lenoblite series;22;;08
+288;4/G.09;Shcherbinaite series;22;;09
+289;4/G.10;Melanovanadite series;22;;10
+290;4/G.11;Bariandite - Corvusite-? series;22;;11
+291;4/G.12;Barnessite - Metahewettite series;22;;12
+292;4/G.13;Bannermannite series;22;;13
+293;4/H.01;Ianthinite - Paraschoepite series;23;;01
+294;4/H.02;Agrinierite - Rameauite series;23;;02
+295;4/H.03;Comperignacite - Billietite series;23;;03
+296;4/H.04;Vandenbrandeite;23;;04
+297;4/H.05;Clarkeite;23;;05
+298;4/H.06;Calciouranoite - W�lsendorfite series;23;;06
+299;4/H.07;Fourmarierite - Masuyite series;23;;07
+300;4/H.08;Uranosphaerite series;23;;08
+301;4/J.01;Reinerite series;24;;01
+302;4/J.02;Nanlingite series;24;;02
+303;4/J.03;Finnemanite - Nealite series;24;;03
+304;4/J.04;Zimbabweite series;24;;04
+305;4/J.05;Asbeckasite - Cafarsite series;24;;05
+306;4/J.06;Stenhuggarite - Lazarenkoite series;24;;06
+307;4/J.07;Karibibite - Ludlockite series;24;;07
+308;4/J.08;Fetiasite - Schneiderh�hnite series;24;;08
+309;4/J.09;Magnussonite - Armangite series;24;;09
+310;4/J.10;Manganarsite - Leiteite series;24;;10
+311;4/J.11;Paulmooreite - Gebhardite series;24;;11
+312;4/K.01;Scotlandite - Molybdomenite series;25;;01
+313;4/K.02;Balyakinite - Plumbotellurite series;25;;02
+314;4/K.03;Schmitterite - Moctezumite series;25;;03
+315;4/K.04;Smirnite - Chekhovicite series;25;;04
+316;4/K.05;Gravegliaite - sophiite series;25;;05
+317;4/K.06;Chalcomenite - Cesbronite series;25;;06
+318;4/K.07;Clinochalcomenite - Ahlfeldite;25;;07
+319;4/K.08;Mandarinoite series;25;;08
+320;4/K.09;Blakeite ? - Poughite series;25;;09
+321;4/K.10;Keystoneite - Francisite series;25;;10
+322;4/K.11;Derriksite - Demesmaekerite series;25;;11
+323;4/K.12;Rayite - Mackayite series;25;;12
+324;4/K.13;Spiroffite - Carlfriesite series;25;;13
+325;4/K.14;Winstanleyite - Cliffordite series;25;;14
+326;4/K.15;Yafsoanite - Cuzticite series;25;;15
+327;4/K.16;Dugganite - Tlalocite;25;;16
+328;4/K.17;Tlapallite series;25;;17
+329;4/K.18;Yecoraite series;25;;18
+330;4/K.19;Girdite - Eztlite series;25;;19
+331;4/L.01;Lautarite - Dietzeite series;26;;01
+332;4/L.02;Salesite - Bellingerite series;26;;02
+333;4/L.03;Seelingerite - Schwartzembergite series;26;;03
+334;4/X.00;Crichtonite Group;27;;00

@@ -1,0 +1,97 @@
+entity Specimen {
+	code String required,
+    acquiredDate LocalDate,
+    acquiredAt String,
+    acquiredPrice Float,
+    acquiredBy String,
+    acquiredFrom String,
+    remark String,
+    fluorescent Boolean,
+}
+
+entity SpecimenStatus {
+	name String required
+}
+
+entity Mineral {
+    dutchName String required,
+    formula String required,
+    hardnessMin Float required,
+    hardnessMax Float required,
+    crystalSystem String required,
+    nickelStruntzLevelFour String required,
+    mindatUrl String required
+}
+
+entity Series {
+	name String required,
+	description String
+}
+
+entity Picture {
+	data ImageBlob required,
+	description String
+}
+
+entity NickelStrunzLevelOne {
+	code String required,
+	name String required
+}
+
+entity NickelStrunzLevelTwo {
+	code String required,
+	name String required
+}
+
+entity NickelStrunzLevelThree {
+	code String required,
+	name String required,
+    shortName String
+}
+
+entity Location {
+    shortName String required,
+    stateProvince String,
+	city String,
+    mine String,
+    xPosition Integer,
+    yPosition Integer
+}
+
+entity Country {
+	countryName String required,
+    shortName String required
+}
+
+relationship ManyToOne {
+	NickelStrunzLevelTwo{parent(name) required} to NickelStrunzLevelOne,
+	NickelStrunzLevelThree{parent(name) required} to NickelStrunzLevelTwo,
+	Mineral{nickelStrunzLevelThree(name) required} to NickelStrunzLevelThree,
+	Picture{specimen(code)} to Specimen,
+	Picture{location(shortName)} to Location,
+    Specimen{status(name)} to SpecimenStatus
+}
+
+relationship ManyToOne {
+	Location{country(countryName)} to Country,
+    Specimen{location(shortName)} to Location
+}
+
+relationship ManyToMany {
+	Specimen{minerals(dutchName)} to Mineral{specimens},
+	Series{specimen(code)} to Specimen{series}
+}
+
+
+// Set pagination options
+paginate all with pagination
+paginate Country with infinite-scroll
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl //except StrunzLevelOne, StrunzLevelTwo, StrunzLevelThree
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

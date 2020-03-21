@@ -1,0 +1,1 @@
+jhipster import-jdl src\main\resources\rockstock.jh

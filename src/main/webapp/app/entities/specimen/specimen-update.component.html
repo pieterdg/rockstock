@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-specimen-heading" jhiTranslate="rockstockApp.specimen.home.createOrEditLabel">Create or edit a Specimen</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                    <div *ngIf="editForm.get('code')!.invalid && (editForm.get('code')!.dirty || editForm.get('code')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('code')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.acquiredDate" for="field_acquiredDate">Acquired Date</label>
+                    <div class="input-group">
+                        <input id="field_acquiredDate" type="text" class="form-control" name="acquiredDate" ngbDatepicker #acquiredDateDp="ngbDatepicker" formControlName="acquiredDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="acquiredDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.acquiredAt" for="field_acquiredAt">Acquired At</label>
+                    <input type="text" class="form-control" name="acquiredAt" id="field_acquiredAt"
+                           formControlName="acquiredAt"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.acquiredPrice" for="field_acquiredPrice">Acquired Price</label>
+                    <input type="number" class="form-control" name="acquiredPrice" id="field_acquiredPrice"
+                           formControlName="acquiredPrice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.acquiredBy" for="field_acquiredBy">Acquired By</label>
+                    <input type="text" class="form-control" name="acquiredBy" id="field_acquiredBy"
+                           formControlName="acquiredBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.acquiredFrom" for="field_acquiredFrom">Acquired From</label>
+                    <input type="text" class="form-control" name="acquiredFrom" id="field_acquiredFrom"
+                           formControlName="acquiredFrom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.remark" for="field_remark">Remark</label>
+                    <input type="text" class="form-control" name="remark" id="field_remark"
+                           formControlName="remark"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.fluorescent" for="field_fluorescent">Fluorescent</label>
+                    <input type="checkbox" class="form-control" name="fluorescent" id="field_fluorescent"
+                           formControlName="fluorescent"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.status" for="field_status">Status</label>
+                    <select class="form-control" id="field_status" name="status" formControlName="statusId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="specimenStatusOption.id" *ngFor="let specimenStatusOption of specimenstatuses; trackBy: trackById">{{ specimenStatusOption.name }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="rockstockApp.specimen.location" for="field_location">Location</label>
+                    <select class="form-control" id="field_location" name="location" formControlName="locationId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="locationOption.id" *ngFor="let locationOption of locations; trackBy: trackById">{{ locationOption.shortName }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="rockstockApp.specimen.minerals" for="field_minerals">Minerals</label>
+                    <select class="form-control" id="field_minerals" multiple name="minerals" formControlName="minerals">
+                        <option [ngValue]="getSelected(editForm.get('minerals')!.value, mineralOption)" *ngFor="let mineralOption of minerals; trackBy: trackById">{{ mineralOption.dutchName }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

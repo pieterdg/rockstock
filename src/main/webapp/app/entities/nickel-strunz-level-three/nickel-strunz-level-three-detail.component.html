@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="nickelStrunzLevelThree">
+            <h2><span jhiTranslate="rockstockApp.nickelStrunzLevelThree.detail.title">Nickel Strunz Level Three</span> {{ nickelStrunzLevelThree.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rockstockApp.nickelStrunzLevelThree.code">Code</span></dt>
+                <dd>
+                    <span>{{ nickelStrunzLevelThree.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.nickelStrunzLevelThree.name">Name</span></dt>
+                <dd>
+                    <span>{{ nickelStrunzLevelThree.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.nickelStrunzLevelThree.shortName">Short Name</span></dt>
+                <dd>
+                    <span>{{ nickelStrunzLevelThree.shortName }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.nickelStrunzLevelThree.parent">Parent</span></dt>
+                <dd>
+                    <div *ngIf="nickelStrunzLevelThree.parentId">
+                        <a [routerLink]="['/nickel-strunz-level-two', nickelStrunzLevelThree.parentId, 'view']">{{ nickelStrunzLevelThree.parentName }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/nickel-strunz-level-three', nickelStrunzLevelThree.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

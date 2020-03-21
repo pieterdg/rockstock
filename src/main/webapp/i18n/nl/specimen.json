@@ -1,0 +1,33 @@
+{
+  "rockstockApp": {
+    "specimen": {
+      "home": {
+        "title": "Specimen",
+        "createLabel": "Maak een nieuwe Specimen",
+        "createOrEditLabel": "Maak of wijzig een Specimen",
+        "notFound": "No Specimen found"
+      },
+      "created": "A new Specimen is created with identifier {{ param }}",
+      "updated": "A Specimen is updated with identifier {{ param }}",
+      "deleted": "A Specimen is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Specimen {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Specimen"
+      },
+      "code": "Code",
+      "acquiredDate": "Acquired Date",
+      "acquiredAt": "Acquired At",
+      "acquiredPrice": "Acquired Price",
+      "acquiredBy": "Acquired By",
+      "acquiredFrom": "Acquired From",
+      "remark": "Remark",
+      "fluorescent": "Fluorescent",
+      "status": "Status",
+      "location": "Location",
+      "minerals": "Minerals",
+      "series": "Series"
+    }
+  }
+}

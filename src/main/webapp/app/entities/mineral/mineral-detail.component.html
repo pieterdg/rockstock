@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mineral">
+            <h2><span jhiTranslate="rockstockApp.mineral.detail.title">Mineral</span> {{ mineral.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="rockstockApp.mineral.dutchName">Dutch Name</span></dt>
+                <dd>
+                    <span>{{ mineral.dutchName }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.mineral.formula">Formula</span></dt>
+                <dd>
+                    <span>{{ mineral.formula }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.mineral.hardnessMin">Hardness Min</span></dt>
+                <dd>
+                    <span>{{ mineral.hardnessMin }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.mineral.hardnessMax">Hardness Max</span></dt>
+                <dd>
+                    <span>{{ mineral.hardnessMax }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.mineral.crystalSystem">Crystal System</span></dt>
+                <dd>
+                    <span>{{ mineral.crystalSystem }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.mineral.nickelStruntzLevelFour">Nickel Struntz Level Four</span></dt>
+                <dd>
+                    <span>{{ mineral.nickelStruntzLevelFour }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.mineral.mindatUrl">Mindat Url</span></dt>
+                <dd>
+                    <span>{{ mineral.mindatUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="rockstockApp.mineral.nickelStrunzLevelThree">Nickel Strunz Level Three</span></dt>
+                <dd>
+                    <div *ngIf="mineral.nickelStrunzLevelThreeId">
+                        <a [routerLink]="['/nickel-strunz-level-three', mineral.nickelStrunzLevelThreeId, 'view']">{{ mineral.nickelStrunzLevelThreeName }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/mineral', mineral.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

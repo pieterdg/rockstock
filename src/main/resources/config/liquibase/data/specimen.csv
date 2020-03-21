@@ -1,0 +1,4 @@
+id;code;acquired_date;acquired_at;acquired_price;acquired_by;acquired_from;remark;fluorescent;location_id  
+1;Nr1;2019-04-01;Beurs 1;10.0;Yvonne;;;FALSE;1
+2;Nr2;2019-04-02;Beurs 2;10.0;Pieter;;;FALSE;1
+3;Nr3;2019-04-03;Gevonden;NULL;;Jantje;Jah, hier kan ik wel nen boom over opzetten...;TRUE;2

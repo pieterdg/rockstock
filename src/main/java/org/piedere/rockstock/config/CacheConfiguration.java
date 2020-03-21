@@ -42,6 +42,20 @@ public class CacheConfiguration {
             createCache(cm, org.piedere.rockstock.domain.User.class.getName());
             createCache(cm, org.piedere.rockstock.domain.Authority.class.getName());
             createCache(cm, org.piedere.rockstock.domain.User.class.getName() + ".authorities");
+            createCache(cm, org.piedere.rockstock.domain.Specimen.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.Specimen.class.getName() + ".minerals");
+            createCache(cm, org.piedere.rockstock.domain.Specimen.class.getName() + ".series");
+            createCache(cm, org.piedere.rockstock.domain.SpecimenStatus.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.Mineral.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.Mineral.class.getName() + ".specimens");
+            createCache(cm, org.piedere.rockstock.domain.Series.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.Series.class.getName() + ".specimen");
+            createCache(cm, org.piedere.rockstock.domain.Picture.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.NickelStrunzLevelOne.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.NickelStrunzLevelTwo.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.NickelStrunzLevelThree.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.Location.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.Country.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
