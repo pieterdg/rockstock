@@ -8,13 +8,13 @@ import java.util.Objects;
  * A DTO for the {@link org.piedere.rockstock.domain.SpecimenStatus} entity.
  */
 public class SpecimenStatusDTO implements Serializable {
-
+    
     private Long id;
 
     @NotNull
     private String name;
 
-
+    
     public Long getId() {
         return id;
     }

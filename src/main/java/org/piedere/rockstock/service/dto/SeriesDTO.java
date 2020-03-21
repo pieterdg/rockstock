@@ -10,7 +10,7 @@ import java.util.Objects;
  * A DTO for the {@link org.piedere.rockstock.domain.Series} entity.
  */
 public class SeriesDTO implements Serializable {
-
+    
     private Long id;
 
     @NotNull
@@ -18,9 +18,8 @@ public class SeriesDTO implements Serializable {
 
     private String description;
 
-
     private Set<SpecimenDTO> specimen = new HashSet<>();
-
+    
     public Long getId() {
         return id;
     }
@@ -80,6 +79,7 @@ public class SeriesDTO implements Serializable {
             "id=" + getId() +
             ", name='" + getName() + "'" +
             ", description='" + getDescription() + "'" +
+            ", specimen='" + getSpecimen() + "'" +
             "}";
     }
 }

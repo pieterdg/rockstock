@@ -26,5 +26,4 @@ public interface SpecimenRepository extends JpaRepository<Specimen, Long> {
 
     @Query("select specimen from Specimen specimen left join fetch specimen.minerals where specimen.id =:id")
     Optional<Specimen> findOneWithEagerRelationships(@Param("id") Long id);
-
 }

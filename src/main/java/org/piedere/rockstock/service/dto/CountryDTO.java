@@ -8,7 +8,7 @@ import java.util.Objects;
  * A DTO for the {@link org.piedere.rockstock.domain.Country} entity.
  */
 public class CountryDTO implements Serializable {
-
+    
     private Long id;
 
     @NotNull
@@ -17,7 +17,7 @@ public class CountryDTO implements Serializable {
     @NotNull
     private String shortName;
 
-
+    
     public Long getId() {
         return id;
     }

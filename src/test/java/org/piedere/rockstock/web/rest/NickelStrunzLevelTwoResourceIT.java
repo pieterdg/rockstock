@@ -7,25 +7,19 @@ import org.piedere.rockstock.repository.NickelStrunzLevelTwoRepository;
 import org.piedere.rockstock.service.NickelStrunzLevelTwoService;
 import org.piedere.rockstock.service.dto.NickelStrunzLevelTwoDTO;
 import org.piedere.rockstock.service.mapper.NickelStrunzLevelTwoMapper;
-import org.piedere.rockstock.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.Validator;
-
 import javax.persistence.EntityManager;
 import java.util.List;
 
-import static org.piedere.rockstock.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -35,6 +29,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link NickelStrunzLevelTwoResource} REST controller.
  */
 @SpringBootTest(classes = RockstockApp.class)
+
+@AutoConfigureMockMvc
+@WithMockUser
 public class NickelStrunzLevelTwoResourceIT {
 
     private static final String DEFAULT_CODE = "AAAAAAAAAA";
@@ -53,35 +50,12 @@ public class NickelStrunzLevelTwoResourceIT {
     private NickelStrunzLevelTwoService nickelStrunzLevelTwoService;
 
     @Autowired
-    private MappingJackson2HttpMessageConverter jacksonMessageConverter;
-
-    @Autowired
-    private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
-
-    @Autowired
-    private ExceptionTranslator exceptionTranslator;
-
-    @Autowired
     private EntityManager em;
 
     @Autowired
-    private Validator validator;
-
     private MockMvc restNickelStrunzLevelTwoMockMvc;
 
     private NickelStrunzLevelTwo nickelStrunzLevelTwo;
-
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        final NickelStrunzLevelTwoResource nickelStrunzLevelTwoResource = new NickelStrunzLevelTwoResource(nickelStrunzLevelTwoService);
-        this.restNickelStrunzLevelTwoMockMvc = MockMvcBuilders.standaloneSetup(nickelStrunzLevelTwoResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter)
-            .setValidator(validator).build();
-    }
 
     /**
      * Create an entity for this test.
@@ -141,7 +115,7 @@ public class NickelStrunzLevelTwoResourceIT {
         // Create the NickelStrunzLevelTwo
         NickelStrunzLevelTwoDTO nickelStrunzLevelTwoDTO = nickelStrunzLevelTwoMapper.toDto(nickelStrunzLevelTwo);
         restNickelStrunzLevelTwoMockMvc.perform(post("/api/nickel-strunz-level-twos")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(nickelStrunzLevelTwoDTO)))
             .andExpect(status().isCreated());
 
@@ -164,7 +138,7 @@ public class NickelStrunzLevelTwoResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restNickelStrunzLevelTwoMockMvc.perform(post("/api/nickel-strunz-level-twos")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(nickelStrunzLevelTwoDTO)))
             .andExpect(status().isBadRequest());
 
@@ -185,7 +159,7 @@ public class NickelStrunzLevelTwoResourceIT {
         NickelStrunzLevelTwoDTO nickelStrunzLevelTwoDTO = nickelStrunzLevelTwoMapper.toDto(nickelStrunzLevelTwo);
 
         restNickelStrunzLevelTwoMockMvc.perform(post("/api/nickel-strunz-level-twos")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(nickelStrunzLevelTwoDTO)))
             .andExpect(status().isBadRequest());
 
@@ -204,7 +178,7 @@ public class NickelStrunzLevelTwoResourceIT {
         NickelStrunzLevelTwoDTO nickelStrunzLevelTwoDTO = nickelStrunzLevelTwoMapper.toDto(nickelStrunzLevelTwo);
 
         restNickelStrunzLevelTwoMockMvc.perform(post("/api/nickel-strunz-level-twos")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(nickelStrunzLevelTwoDTO)))
             .andExpect(status().isBadRequest());
 
@@ -268,7 +242,7 @@ public class NickelStrunzLevelTwoResourceIT {
         NickelStrunzLevelTwoDTO nickelStrunzLevelTwoDTO = nickelStrunzLevelTwoMapper.toDto(updatedNickelStrunzLevelTwo);
 
         restNickelStrunzLevelTwoMockMvc.perform(put("/api/nickel-strunz-level-twos")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(nickelStrunzLevelTwoDTO)))
             .andExpect(status().isOk());
 
@@ -290,7 +264,7 @@ public class NickelStrunzLevelTwoResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restNickelStrunzLevelTwoMockMvc.perform(put("/api/nickel-strunz-level-twos")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(nickelStrunzLevelTwoDTO)))
             .andExpect(status().isBadRequest());
 
@@ -309,7 +283,7 @@ public class NickelStrunzLevelTwoResourceIT {
 
         // Delete the nickelStrunzLevelTwo
         restNickelStrunzLevelTwoMockMvc.perform(delete("/api/nickel-strunz-level-twos/{id}", nickelStrunzLevelTwo.getId())
-            .accept(TestUtil.APPLICATION_JSON))
+            .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item

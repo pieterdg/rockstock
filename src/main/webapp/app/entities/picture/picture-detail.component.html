@@ -11,7 +11,7 @@
                 <dt><span jhiTranslate="rockstockApp.picture.data">Data</span></dt>
                 <dd>
                     <div *ngIf="picture.data">
-                        <a (click)="openFile(picture.dataContentType!, picture.data)">
+                        <a (click)="openFile(picture?.dataContentType!, picture?.data)">
                             <img [src]="'data:' + picture.dataContentType + ';base64,' + picture.data" style="max-width: 100%;" alt="picture image"/>
                         </a>
                         {{ picture.dataContentType }}, {{ byteSize(picture.data) }}

@@ -4,6 +4,7 @@ import { Resolve, ActivatedRouteSnapshot, Routes, Router } from '@angular/router
 import { Observable, of, EMPTY } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 
+import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { ICountry, Country } from 'app/shared/model/country.model';
 import { CountryService } from './country.service';
@@ -38,7 +39,7 @@ export const countryRoute: Routes = [
     path: '',
     component: CountryComponent,
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'rockstockApp.country.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -50,7 +51,7 @@ export const countryRoute: Routes = [
       country: CountryResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'rockstockApp.country.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -62,7 +63,7 @@ export const countryRoute: Routes = [
       country: CountryResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'rockstockApp.country.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -74,7 +75,7 @@ export const countryRoute: Routes = [
       country: CountryResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'rockstockApp.country.home.title'
     },
     canActivate: [UserRouteAccessService]

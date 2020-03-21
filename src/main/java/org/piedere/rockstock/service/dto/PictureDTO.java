@@ -9,7 +9,7 @@ import javax.persistence.Lob;
  * A DTO for the {@link org.piedere.rockstock.domain.Picture} entity.
  */
 public class PictureDTO implements Serializable {
-
+    
     private Long id;
 
     
@@ -27,7 +27,7 @@ public class PictureDTO implements Serializable {
     private Long locationId;
 
     private String locationShortName;
-
+    
     public Long getId() {
         return id;
     }

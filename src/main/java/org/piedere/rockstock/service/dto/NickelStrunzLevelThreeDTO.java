@@ -8,7 +8,7 @@ import java.util.Objects;
  * A DTO for the {@link org.piedere.rockstock.domain.NickelStrunzLevelThree} entity.
  */
 public class NickelStrunzLevelThreeDTO implements Serializable {
-
+    
     private Long id;
 
     @NotNull
@@ -23,7 +23,7 @@ public class NickelStrunzLevelThreeDTO implements Serializable {
     private Long parentId;
 
     private String parentName;
-
+    
     public Long getId() {
         return id;
     }

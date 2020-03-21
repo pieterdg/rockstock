@@ -5,6 +5,7 @@ import { JhiResolvePagingParams } from 'ng-jhipster';
 import { Observable, of, EMPTY } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 
+import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { INickelStrunzLevelThree, NickelStrunzLevelThree } from 'app/shared/model/nickel-strunz-level-three.model';
 import { NickelStrunzLevelThreeService } from './nickel-strunz-level-three.service';
@@ -42,7 +43,7 @@ export const nickelStrunzLevelThreeRoute: Routes = [
       pagingParams: JhiResolvePagingParams
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       defaultSort: 'id,asc',
       pageTitle: 'rockstockApp.nickelStrunzLevelThree.home.title'
     },
@@ -55,7 +56,7 @@ export const nickelStrunzLevelThreeRoute: Routes = [
       nickelStrunzLevelThree: NickelStrunzLevelThreeResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'rockstockApp.nickelStrunzLevelThree.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -67,7 +68,7 @@ export const nickelStrunzLevelThreeRoute: Routes = [
       nickelStrunzLevelThree: NickelStrunzLevelThreeResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'rockstockApp.nickelStrunzLevelThree.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -79,7 +80,7 @@ export const nickelStrunzLevelThreeRoute: Routes = [
       nickelStrunzLevelThree: NickelStrunzLevelThreeResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: [Authority.USER],
       pageTitle: 'rockstockApp.nickelStrunzLevelThree.home.title'
     },
     canActivate: [UserRouteAccessService]
