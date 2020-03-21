@@ -6,31 +6,27 @@ import org.piedere.rockstock.repository.SpecimenRepository;
 import org.piedere.rockstock.service.SpecimenService;
 import org.piedere.rockstock.service.dto.SpecimenDTO;
 import org.piedere.rockstock.service.mapper.SpecimenMapper;
-import org.piedere.rockstock.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.Validator;
-
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.piedere.rockstock.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.mockito.Mockito.*;
@@ -41,6 +37,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link SpecimenResource} REST controller.
  */
 @SpringBootTest(classes = RockstockApp.class)
+@ExtendWith(MockitoExtension.class)
+@AutoConfigureMockMvc
+@WithMockUser
 public class SpecimenResourceIT {
 
     private static final String DEFAULT_CODE = "AAAAAAAAAA";
@@ -83,35 +82,12 @@ public class SpecimenResourceIT {
     private SpecimenService specimenService;
 
     @Autowired
-    private MappingJackson2HttpMessageConverter jacksonMessageConverter;
-
-    @Autowired
-    private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
-
-    @Autowired
-    private ExceptionTranslator exceptionTranslator;
-
-    @Autowired
     private EntityManager em;
 
     @Autowired
-    private Validator validator;
-
     private MockMvc restSpecimenMockMvc;
 
     private Specimen specimen;
-
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        final SpecimenResource specimenResource = new SpecimenResource(specimenService);
-        this.restSpecimenMockMvc = MockMvcBuilders.standaloneSetup(specimenResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter)
-            .setValidator(validator).build();
-    }
 
     /**
      * Create an entity for this test.
@@ -163,7 +139,7 @@ public class SpecimenResourceIT {
         // Create the Specimen
         SpecimenDTO specimenDTO = specimenMapper.toDto(specimen);
         restSpecimenMockMvc.perform(post("/api/specimen")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(specimenDTO)))
             .andExpect(status().isCreated());
 
@@ -192,7 +168,7 @@ public class SpecimenResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restSpecimenMockMvc.perform(post("/api/specimen")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(specimenDTO)))
             .andExpect(status().isBadRequest());
 
@@ -213,7 +189,7 @@ public class SpecimenResourceIT {
         SpecimenDTO specimenDTO = specimenMapper.toDto(specimen);
 
         restSpecimenMockMvc.perform(post("/api/specimen")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(specimenDTO)))
             .andExpect(status().isBadRequest());
 
@@ -244,35 +220,22 @@ public class SpecimenResourceIT {
     
     @SuppressWarnings({"unchecked"})
     public void getAllSpecimenWithEagerRelationshipsIsEnabled() throws Exception {
-        SpecimenResource specimenResource = new SpecimenResource(specimenServiceMock);
         when(specimenServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
 
-        MockMvc restSpecimenMockMvc = MockMvcBuilders.standaloneSetup(specimenResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
-
         restSpecimenMockMvc.perform(get("/api/specimen?eagerload=true"))
-        .andExpect(status().isOk());
+            .andExpect(status().isOk());
 
         verify(specimenServiceMock, times(1)).findAllWithEagerRelationships(any());
     }
 
     @SuppressWarnings({"unchecked"})
     public void getAllSpecimenWithEagerRelationshipsIsNotEnabled() throws Exception {
-        SpecimenResource specimenResource = new SpecimenResource(specimenServiceMock);
-            when(specimenServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-            MockMvc restSpecimenMockMvc = MockMvcBuilders.standaloneSetup(specimenResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
+        when(specimenServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
 
         restSpecimenMockMvc.perform(get("/api/specimen?eagerload=true"))
-        .andExpect(status().isOk());
+            .andExpect(status().isOk());
 
-            verify(specimenServiceMock, times(1)).findAllWithEagerRelationships(any());
+        verify(specimenServiceMock, times(1)).findAllWithEagerRelationships(any());
     }
 
     @Test
@@ -328,7 +291,7 @@ public class SpecimenResourceIT {
         SpecimenDTO specimenDTO = specimenMapper.toDto(updatedSpecimen);
 
         restSpecimenMockMvc.perform(put("/api/specimen")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(specimenDTO)))
             .andExpect(status().isOk());
 
@@ -356,7 +319,7 @@ public class SpecimenResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restSpecimenMockMvc.perform(put("/api/specimen")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(specimenDTO)))
             .andExpect(status().isBadRequest());
 
@@ -375,7 +338,7 @@ public class SpecimenResourceIT {
 
         // Delete the specimen
         restSpecimenMockMvc.perform(delete("/api/specimen/{id}", specimen.getId())
-            .accept(TestUtil.APPLICATION_JSON))
+            .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item

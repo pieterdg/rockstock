@@ -11,7 +11,7 @@ import java.util.Objects;
  * A DTO for the {@link org.piedere.rockstock.domain.Specimen} entity.
  */
 public class SpecimenDTO implements Serializable {
-
+    
     private Long id;
 
     @NotNull
@@ -39,9 +39,8 @@ public class SpecimenDTO implements Serializable {
     private Long locationId;
 
     private String locationShortName;
-
     private Set<MineralDTO> minerals = new HashSet<>();
-
+    
     public Long getId() {
         return id;
     }
@@ -191,6 +190,7 @@ public class SpecimenDTO implements Serializable {
             ", statusName='" + getStatusName() + "'" +
             ", locationId=" + getLocationId() +
             ", locationShortName='" + getLocationShortName() + "'" +
+            ", minerals='" + getMinerals() + "'" +
             "}";
     }
 }

@@ -6,26 +6,20 @@ import org.piedere.rockstock.repository.PictureRepository;
 import org.piedere.rockstock.service.PictureService;
 import org.piedere.rockstock.service.dto.PictureDTO;
 import org.piedere.rockstock.service.mapper.PictureMapper;
-import org.piedere.rockstock.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Base64Utils;
-import org.springframework.validation.Validator;
-
 import javax.persistence.EntityManager;
 import java.util.List;
 
-import static org.piedere.rockstock.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -35,6 +29,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link PictureResource} REST controller.
  */
 @SpringBootTest(classes = RockstockApp.class)
+
+@AutoConfigureMockMvc
+@WithMockUser
 public class PictureResourceIT {
 
     private static final byte[] DEFAULT_DATA = TestUtil.createByteArray(1, "0");
@@ -55,35 +52,12 @@ public class PictureResourceIT {
     private PictureService pictureService;
 
     @Autowired
-    private MappingJackson2HttpMessageConverter jacksonMessageConverter;
-
-    @Autowired
-    private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
-
-    @Autowired
-    private ExceptionTranslator exceptionTranslator;
-
-    @Autowired
     private EntityManager em;
 
     @Autowired
-    private Validator validator;
-
     private MockMvc restPictureMockMvc;
 
     private Picture picture;
-
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        final PictureResource pictureResource = new PictureResource(pictureService);
-        this.restPictureMockMvc = MockMvcBuilders.standaloneSetup(pictureResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter)
-            .setValidator(validator).build();
-    }
 
     /**
      * Create an entity for this test.
@@ -125,7 +99,7 @@ public class PictureResourceIT {
         // Create the Picture
         PictureDTO pictureDTO = pictureMapper.toDto(picture);
         restPictureMockMvc.perform(post("/api/pictures")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(pictureDTO)))
             .andExpect(status().isCreated());
 
@@ -149,7 +123,7 @@ public class PictureResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restPictureMockMvc.perform(post("/api/pictures")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(pictureDTO)))
             .andExpect(status().isBadRequest());
 
@@ -218,7 +192,7 @@ public class PictureResourceIT {
         PictureDTO pictureDTO = pictureMapper.toDto(updatedPicture);
 
         restPictureMockMvc.perform(put("/api/pictures")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(pictureDTO)))
             .andExpect(status().isOk());
 
@@ -241,7 +215,7 @@ public class PictureResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restPictureMockMvc.perform(put("/api/pictures")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(pictureDTO)))
             .andExpect(status().isBadRequest());
 
@@ -260,7 +234,7 @@ public class PictureResourceIT {
 
         // Delete the picture
         restPictureMockMvc.perform(delete("/api/pictures/{id}", picture.getId())
-            .accept(TestUtil.APPLICATION_JSON))
+            .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item

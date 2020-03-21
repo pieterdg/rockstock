@@ -1,6 +1,7 @@
 package org.piedere.rockstock.repository;
 
 import org.piedere.rockstock.RockstockApp;
+
 import org.piedere.rockstock.config.Constants;
 import org.piedere.rockstock.config.audit.AuditEventConverter;
 import org.piedere.rockstock.domain.PersistentAuditEvent;

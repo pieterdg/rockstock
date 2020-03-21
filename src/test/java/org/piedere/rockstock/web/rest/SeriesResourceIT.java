@@ -6,29 +6,25 @@ import org.piedere.rockstock.repository.SeriesRepository;
 import org.piedere.rockstock.service.SeriesService;
 import org.piedere.rockstock.service.dto.SeriesDTO;
 import org.piedere.rockstock.service.mapper.SeriesMapper;
-import org.piedere.rockstock.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.Validator;
-
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.piedere.rockstock.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.mockito.Mockito.*;
@@ -39,6 +35,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link SeriesResource} REST controller.
  */
 @SpringBootTest(classes = RockstockApp.class)
+@ExtendWith(MockitoExtension.class)
+@AutoConfigureMockMvc
+@WithMockUser
 public class SeriesResourceIT {
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
@@ -63,35 +62,12 @@ public class SeriesResourceIT {
     private SeriesService seriesService;
 
     @Autowired
-    private MappingJackson2HttpMessageConverter jacksonMessageConverter;
-
-    @Autowired
-    private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
-
-    @Autowired
-    private ExceptionTranslator exceptionTranslator;
-
-    @Autowired
     private EntityManager em;
 
     @Autowired
-    private Validator validator;
-
     private MockMvc restSeriesMockMvc;
 
     private Series series;
-
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        final SeriesResource seriesResource = new SeriesResource(seriesService);
-        this.restSeriesMockMvc = MockMvcBuilders.standaloneSetup(seriesResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter)
-            .setValidator(validator).build();
-    }
 
     /**
      * Create an entity for this test.
@@ -131,7 +107,7 @@ public class SeriesResourceIT {
         // Create the Series
         SeriesDTO seriesDTO = seriesMapper.toDto(series);
         restSeriesMockMvc.perform(post("/api/series")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(seriesDTO)))
             .andExpect(status().isCreated());
 
@@ -154,7 +130,7 @@ public class SeriesResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restSeriesMockMvc.perform(post("/api/series")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(seriesDTO)))
             .andExpect(status().isBadRequest());
 
@@ -175,7 +151,7 @@ public class SeriesResourceIT {
         SeriesDTO seriesDTO = seriesMapper.toDto(series);
 
         restSeriesMockMvc.perform(post("/api/series")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(seriesDTO)))
             .andExpect(status().isBadRequest());
 
@@ -200,35 +176,22 @@ public class SeriesResourceIT {
     
     @SuppressWarnings({"unchecked"})
     public void getAllSeriesWithEagerRelationshipsIsEnabled() throws Exception {
-        SeriesResource seriesResource = new SeriesResource(seriesServiceMock);
         when(seriesServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
 
-        MockMvc restSeriesMockMvc = MockMvcBuilders.standaloneSetup(seriesResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
-
         restSeriesMockMvc.perform(get("/api/series?eagerload=true"))
-        .andExpect(status().isOk());
+            .andExpect(status().isOk());
 
         verify(seriesServiceMock, times(1)).findAllWithEagerRelationships(any());
     }
 
     @SuppressWarnings({"unchecked"})
     public void getAllSeriesWithEagerRelationshipsIsNotEnabled() throws Exception {
-        SeriesResource seriesResource = new SeriesResource(seriesServiceMock);
-            when(seriesServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-            MockMvc restSeriesMockMvc = MockMvcBuilders.standaloneSetup(seriesResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
+        when(seriesServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
 
         restSeriesMockMvc.perform(get("/api/series?eagerload=true"))
-        .andExpect(status().isOk());
+            .andExpect(status().isOk());
 
-            verify(seriesServiceMock, times(1)).findAllWithEagerRelationships(any());
+        verify(seriesServiceMock, times(1)).findAllWithEagerRelationships(any());
     }
 
     @Test
@@ -272,7 +235,7 @@ public class SeriesResourceIT {
         SeriesDTO seriesDTO = seriesMapper.toDto(updatedSeries);
 
         restSeriesMockMvc.perform(put("/api/series")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(seriesDTO)))
             .andExpect(status().isOk());
 
@@ -294,7 +257,7 @@ public class SeriesResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restSeriesMockMvc.perform(put("/api/series")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(seriesDTO)))
             .andExpect(status().isBadRequest());
 
@@ -313,7 +276,7 @@ public class SeriesResourceIT {
 
         // Delete the series
         restSeriesMockMvc.perform(delete("/api/series/{id}", series.getId())
-            .accept(TestUtil.APPLICATION_JSON))
+            .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item

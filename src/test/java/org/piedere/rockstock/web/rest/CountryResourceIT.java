@@ -6,25 +6,19 @@ import org.piedere.rockstock.repository.CountryRepository;
 import org.piedere.rockstock.service.CountryService;
 import org.piedere.rockstock.service.dto.CountryDTO;
 import org.piedere.rockstock.service.mapper.CountryMapper;
-import org.piedere.rockstock.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.Validator;
-
 import javax.persistence.EntityManager;
 import java.util.List;
 
-import static org.piedere.rockstock.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -34,6 +28,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Integration tests for the {@link CountryResource} REST controller.
  */
 @SpringBootTest(classes = RockstockApp.class)
+
+@AutoConfigureMockMvc
+@WithMockUser
 public class CountryResourceIT {
 
     private static final String DEFAULT_COUNTRY_NAME = "AAAAAAAAAA";
@@ -52,35 +49,12 @@ public class CountryResourceIT {
     private CountryService countryService;
 
     @Autowired
-    private MappingJackson2HttpMessageConverter jacksonMessageConverter;
-
-    @Autowired
-    private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
-
-    @Autowired
-    private ExceptionTranslator exceptionTranslator;
-
-    @Autowired
     private EntityManager em;
 
     @Autowired
-    private Validator validator;
-
     private MockMvc restCountryMockMvc;
 
     private Country country;
-
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        final CountryResource countryResource = new CountryResource(countryService);
-        this.restCountryMockMvc = MockMvcBuilders.standaloneSetup(countryResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter)
-            .setValidator(validator).build();
-    }
 
     /**
      * Create an entity for this test.
@@ -120,7 +94,7 @@ public class CountryResourceIT {
         // Create the Country
         CountryDTO countryDTO = countryMapper.toDto(country);
         restCountryMockMvc.perform(post("/api/countries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(countryDTO)))
             .andExpect(status().isCreated());
 
@@ -143,7 +117,7 @@ public class CountryResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restCountryMockMvc.perform(post("/api/countries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(countryDTO)))
             .andExpect(status().isBadRequest());
 
@@ -164,7 +138,7 @@ public class CountryResourceIT {
         CountryDTO countryDTO = countryMapper.toDto(country);
 
         restCountryMockMvc.perform(post("/api/countries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(countryDTO)))
             .andExpect(status().isBadRequest());
 
@@ -183,7 +157,7 @@ public class CountryResourceIT {
         CountryDTO countryDTO = countryMapper.toDto(country);
 
         restCountryMockMvc.perform(post("/api/countries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(countryDTO)))
             .andExpect(status().isBadRequest());
 
@@ -247,7 +221,7 @@ public class CountryResourceIT {
         CountryDTO countryDTO = countryMapper.toDto(updatedCountry);
 
         restCountryMockMvc.perform(put("/api/countries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(countryDTO)))
             .andExpect(status().isOk());
 
@@ -269,7 +243,7 @@ public class CountryResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restCountryMockMvc.perform(put("/api/countries")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(countryDTO)))
             .andExpect(status().isBadRequest());
 
@@ -288,7 +262,7 @@ public class CountryResourceIT {
 
         // Delete the country
         restCountryMockMvc.perform(delete("/api/countries/{id}", country.getId())
-            .accept(TestUtil.APPLICATION_JSON))
+            .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item
