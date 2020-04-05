@@ -3,7 +3,7 @@
 		"title": "Welcome, Rockstocker!",
 		"subtitle": "This app allows you to store and manage your collection of rock/mineral specimen.",
 		"search": "Search",
-		"summary": "There are currently <strong>{{nrSpecimen}}</strong> specimens in your collections, spanning <strong>{{nrMinerals}}</strong> minerals and <strong>{{nrCountries}}</strong> countries.",
+		"summary": "There are currently <strong>{{nrSpecimen}}</strong> specimens in your collections, spanning <strong>{{nrMinerals}}</strong> minerals and <strong>{{nrLocations}}</strong> locations.",
 		"manage": "Manage your collection:",
 		"logged": {
 			"message": "You are logged in as user \"{{username}}\"."

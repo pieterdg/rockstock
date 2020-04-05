@@ -6,9 +6,14 @@ import { AlertErrorComponent } from './alert/alert-error.component';
 import { LoginModalComponent } from './login/login.component';
 import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 
+// Vanaf hier, zelf toegevoegde components:
+import { NickelstrunzSelectorComponent } from './component/nickelstrunz-selector.component';
+import { SearchService } from './search/search.service';
+
+
 @NgModule({
   imports: [RockstockSharedLibsModule],
-  declarations: [FindLanguageFromKeyPipe, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
+  declarations: [FindLanguageFromKeyPipe, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective, NickelstrunzSelectorComponent],
   entryComponents: [LoginModalComponent],
   exports: [
     RockstockSharedLibsModule,
@@ -16,7 +21,9 @@ import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
     AlertComponent,
     AlertErrorComponent,
     LoginModalComponent,
-    HasAnyAuthorityDirective
-  ]
+    HasAnyAuthorityDirective,
+    NickelstrunzSelectorComponent
+  ],
+  providers: [SearchService]
 })
 export class RockstockSharedModule {}

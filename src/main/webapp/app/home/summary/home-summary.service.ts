@@ -11,8 +11,8 @@ export class HomeSummaryService {
 
     constructor( protected http: HttpClient ) { }
 
-    countCountries(): Observable<HttpResponse<Number>> {
-        return this.http.get<Number>( `${this.resourceUrl}/countries/count`, { observe: 'response' } );
+    countLocations(): Observable<HttpResponse<Number>> {
+        return this.http.get<Number>( `${this.resourceUrl}/locations/count`, { observe: 'response' } );
     }
 
     countMinerals(): Observable<HttpResponse<Number>> {

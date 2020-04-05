@@ -3,7 +3,7 @@
 		"title": "Welkom, Rockstocker!",
 		"subtitle": "Deze app laat u toe om uw verzameling mineralen op te stellen en te beheren.",
 		"search": "Zoek",
-		"summary": "Er zijn momenteel <strong>{{nrSpecimen}}</strong> specimen in uw verzameling, verdeeld over <strong>{{nrMinerals}}</strong> mineralen en <strong>{{nrCountries}}</strong> landen.",
+		"summary": "Er zijn momenteel <strong>{{nrSpecimen}}</strong> specimen in uw verzameling, verdeeld over <strong>{{nrMinerals}}</strong> mineralen en <strong>{{nrLocations}}</strong> locaties.",
 		"manage": "Beheer uw verzameling:",
 		"logged": {
 			"message": "U bent aangemeld als gebruiker \"{{username}}\"."

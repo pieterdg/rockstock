@@ -17,6 +17,7 @@ import { NickelStrunzLevelThreeService } from 'app/entities/nickel-strunz-level-
 export class MineralUpdateComponent implements OnInit {
   isSaving = false;
   nickelstrunzlevelthrees: INickelStrunzLevelThree[] = [];
+  nickelstrunzGroup: String = '';
 
   editForm = this.fb.group({
     id: [],
@@ -108,5 +109,23 @@ export class MineralUpdateComponent implements OnInit {
 
   trackById(index: number, item: INickelStrunzLevelThree): any {
     return item.id;
+  }
+  
+  updateNsCode(nsInfo: any): void {
+      this.nickelstrunzGroup = nsInfo.nickelStrunzCode;
+
+      const nickelStruntzLevelFour = this.editForm.get('nickelStruntzLevelFour');
+      if (nickelStruntzLevelFour != null) {
+          if (nsInfo.nickelStrunzCode.length === 5) {
+              nickelStruntzLevelFour.enable();
+              if (nsInfo.nickelStrunzLevelThree != null) {
+                  this.editForm.patchValue({
+                      nickelStrunzLevelThreeId: nsInfo.nickelStrunzLevelThree.id
+                  });
+              }
+          } else {
+              nickelStruntzLevelFour.disable();
+          }
+      }
   }
 }

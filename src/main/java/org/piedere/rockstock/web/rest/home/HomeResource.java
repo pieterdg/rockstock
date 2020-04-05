@@ -35,6 +35,17 @@ public class HomeResource {
 	}
 
 	/**
+	 * Get the total number of countries within the collection.
+	 * 
+	 * @return the ResponseEntity with status 200 (OK) containing the number.
+	 */
+	@GetMapping("/locations/count")
+	public ResponseEntity<Long> countLocations() {
+		log.debug("REST request to get the total number of locations");
+		return ResponseEntity.ok(Long.valueOf(homeService.countLocations()));
+	}
+
+	/**
 	 * Get the total number of minerals within the collection.
 	 * 
 	 * @return the ResponseEntity with status 200 (OK) containing the number.

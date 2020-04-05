@@ -11,6 +11,8 @@ public interface HomeService {
      * @return the total number of countries.
      */
     long countCountries();
+    
+    long countLocations();
 
     long countMinerals();
     

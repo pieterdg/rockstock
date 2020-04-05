@@ -1,0 +1,32 @@
+<div class="">
+    <form name="nsForm" role="form" novalidate [formGroup]="nsForm">
+        <label class="form-control-label" for="field_nickelStrunzLevelOne">Nickel Strunz</label>
+
+        <select class="form-control" name="nsl1" formControlName="nsl1" (change)="onNickelStrunzOneSelected()"
+            [compareWith]="compareFn">
+            <option [ngValue]="i" *ngFor="let i of nickelstrunzlevelones">{{i.code}} - {{i.name}}</option>
+        </select>
+        <div *ngIf="nsForm.get('nsl1')!.invalid && (nsForm.get('nsl1')!.dirty || nsForm.get('nsl1')!.touched)">
+            <small class="form-text text-danger" *ngIf="nsForm.get('nsl1')?.errors?.required"
+                jhiTranslate="entity.validation.required"> This field is required. </small>
+        </div>
+
+        <select class="form-control" name="nsl2" formControlName="nsl2" (change)="onNickelStrunzTwoSelected()"
+            [compareWith]="compareFn" disabled>
+            <option [ngValue]="i" *ngFor="let i of nickelstrunzleveltwos">{{i.code}} - {{i.name}}</option>
+        </select>
+        <div *ngIf="nsForm.get('nsl2')!.invalid && (nsForm.get('nsl2')!.dirty || nsForm.get('nsl2')!.touched)">
+            <small class="form-text text-danger" *ngIf="nsForm.get('nsl2')?.errors?.required"
+                jhiTranslate="entity.validation.required"> This field is required. </small>
+        </div>
+
+        <select class="form-control" name="nsl3" formControlName="nsl3" (change)="onNickelStrunzThreeSelected()"
+            [compareWith]="compareFn" disabled>
+            <option [ngValue]="i" *ngFor="let i of nickelstrunzlevelthrees">{{i.code}} - {{i.name}}</option>
+        </select>
+        <div *ngIf="nsForm.get('nsl3')!.invalid && (nsForm.get('nsl3')!.dirty || nsForm.get('nsl3')!.touched)">
+            <small class="form-text text-danger" *ngIf="nsForm.get('nsl3')?.errors?.required"
+                jhiTranslate="entity.validation.required"> This field is required. </small>
+        </div>
+    </form>
+</div>

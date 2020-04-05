@@ -2,29 +2,29 @@
   "rockstockApp": {
     "mineral": {
       "home": {
-        "title": "Minerals",
-        "createLabel": "Maak een nieuwe Mineral",
-        "createOrEditLabel": "Maak of wijzig een Mineral",
-        "notFound": "No Minerals found"
+        "title": "Mineralen",
+        "createLabel": "Voeg een nieuw mineraal toe",
+        "createOrEditLabel": "Voeg toe of wijzig een mineraal",
+        "notFound": "Geen mineralen gevonden"
       },
-      "created": "A new Mineral is created with identifier {{ param }}",
-      "updated": "A Mineral is updated with identifier {{ param }}",
-      "deleted": "A Mineral is deleted with identifier {{ param }}",
+      "created": "Een nieuw mineraal is toegevoegd met identificatie {{ param }}",
+      "updated": "Een nieuw mineraal is aangepast met identificatie {{ param }}",
+      "deleted": "Een bestaand mineraal is verwijderd met identificatie {{ param }}",
       "delete": {
-        "question": "Bent u zeker dat u Mineral {{ id }} wilt verwijderen?"
+        "question": "Bent u zeker dat u mineraal {{ id }} wilt verwijderen?"
       },
       "detail": {
-        "title": "Mineral"
+        "title": "Mineraal"
       },
-      "dutchName": "Dutch Name",
-      "formula": "Formula",
-      "hardnessMin": "Hardness Min",
-      "hardnessMax": "Hardness Max",
+      "dutchName": "Nederlandstalige naam",
+      "formula": "Chemische formule",
+      "hardnessMin": "Hardheid Min",
+      "hardnessMax": "Hardheid Max",
       "crystalSystem": "Crystal System",
       "nickelStruntzLevelFour": "Nickel Struntz Level Four",
-      "mindatUrl": "Mindat Url",
+      "mindatUrl": "Mindat URL",
       "nickelStrunzLevelThree": "Nickel Strunz Level Three",
-      "specimens": "Specimens"
+      "specimens": "Specimen"
     }
   }
 }
