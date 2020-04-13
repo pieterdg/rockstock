@@ -3,30 +3,30 @@
     "specimen": {
       "home": {
         "title": "Specimen",
-        "createLabel": "Maak een nieuwe Specimen",
-        "createOrEditLabel": "Maak of wijzig een Specimen",
-        "notFound": "No Specimen found"
+        "createLabel": "Maak een nieuw specimen aan",
+        "createOrEditLabel": "Voeg toe of wijzig een specimen",
+        "notFound": "Specimen niet gevonden"
       },
-      "created": "A new Specimen is created with identifier {{ param }}",
-      "updated": "A Specimen is updated with identifier {{ param }}",
-      "deleted": "A Specimen is deleted with identifier {{ param }}",
+      "created": "Een nieuw specimen is aangemaakt met identifier {{ param }}",
+      "updated": "Een specimen met identifier {{ param }} is gewijzigd",
+      "deleted": "Een specimen met identifier {{ param }} is verwijderd",
       "delete": {
-        "question": "Bent u zeker dat u Specimen {{ id }} wilt verwijderen?"
+        "question": "Bent u zeker dat u Specimen {{ code }} wil verwijderen?"
       },
       "detail": {
         "title": "Specimen"
       },
       "code": "Code",
-      "acquiredDate": "Acquired Date",
-      "acquiredAt": "Acquired At",
-      "acquiredPrice": "Acquired Price",
-      "acquiredBy": "Acquired By",
-      "acquiredFrom": "Acquired From",
-      "remark": "Remark",
-      "fluorescent": "Fluorescent",
+      "acquiredDate": "Datum",
+      "acquiredAt": "Beurs",
+      "acquiredPrice": "Prijs",
+      "acquiredBy": "Door wie?",
+      "acquiredFrom": "Verkregen van",
+      "remark": "Opmerking",
+      "fluorescent": "Fluoriserend",
       "status": "Status",
-      "location": "Location",
-      "minerals": "Minerals",
+      "location": "Locatie",
+      "minerals": "Mineralen",
       "series": "Series"
     }
   }

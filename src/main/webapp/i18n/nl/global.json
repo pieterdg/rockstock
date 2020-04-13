@@ -2,6 +2,8 @@
   "global": {
     "title": "Rockstock",
     "browsehappy": "U gebruikt een <strong>verouderde</strong> browser. <a href=\"http://browsehappy.com/?locale=en\">upgrade uw browser</a> om de bruikbaarheid te verbeteren.",
+    "about": "Over",
+    "origin": "Origine",
     "menu": {
       "home": "Startpagina",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",

@@ -16,14 +16,14 @@
       "detail": {
         "title": "Mineraal"
       },
-      "dutchName": "Nederlandstalige naam",
+      "dutchName": "Naam",
       "formula": "Chemische formule",
-      "hardnessMin": "Hardheid Min",
-      "hardnessMax": "Hardheid Max",
+      "hardnessMin": "Hardheid",
+      "hardnessMax": "Hardheid",
       "crystalSystem": "Crystal System",
-      "nickelStruntzLevelFour": "Nickel Struntz Level Four",
+      "nickelStruntzLevelFour": "Nickel Struntz",
       "mindatUrl": "Mindat URL",
-      "nickelStrunzLevelThree": "Nickel Strunz Level Three",
+      "nickelStrunzLevelThree": "Nickel Strunz",
       "specimens": "Specimen"
     }
   }

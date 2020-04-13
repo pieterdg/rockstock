@@ -1,75 +1,109 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="specimen">
-            <h2><span jhiTranslate="rockstockApp.specimen.detail.title">Specimen</span> {{ specimen.id }}</h2>
+            <h2>
+                <span jhiTranslate="rockstockApp.specimen.detail.title">Specimen</span> {{ specimen.code }}
+            </h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
-            <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rockstockApp.specimen.code">Code</span></dt>
-                <dd>
-                    <span>{{ specimen.code }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.acquiredDate">Acquired Date</span></dt>
-                <dd>
-                    <span>{{ specimen.acquiredDate }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.acquiredAt">Acquired At</span></dt>
-                <dd>
-                    <span>{{ specimen.acquiredAt }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.acquiredPrice">Acquired Price</span></dt>
-                <dd>
-                    <span>{{ specimen.acquiredPrice }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.acquiredBy">Acquired By</span></dt>
-                <dd>
-                    <span>{{ specimen.acquiredBy }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.acquiredFrom">Acquired From</span></dt>
-                <dd>
-                    <span>{{ specimen.acquiredFrom }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.remark">Remark</span></dt>
-                <dd>
-                    <span>{{ specimen.remark }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.fluorescent">Fluorescent</span></dt>
-                <dd>
-                    <span>{{ specimen.fluorescent }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.status">Status</span></dt>
-                <dd>
-                    <div *ngIf="specimen.statusId">
-                        <a [routerLink]="['/specimen-status', specimen.statusId, 'view']">{{ specimen.statusName }}</a>
-                    </div>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.location">Location</span></dt>
-                <dd>
-                    <div *ngIf="specimen.locationId">
-                        <a [routerLink]="['/location', specimen.locationId, 'view']">{{ specimen.locationShortName }}</a>
-                    </div>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.specimen.minerals">Minerals</span></dt>
-                <dd>
-                    <span *ngFor="let minerals of specimen.minerals; let last = last">
-                        <a [routerLink]="['/mineral', minerals?.id, 'view']">{{ minerals.dutchName }}</a>{{ last ? '' : ', ' }}
-                    </span>
-                </dd>
-            </dl>
+            <div class="d-block">
+                <div style="height: 250px; background: #e4e5e6;">Room for pictures...</div>
+            </div>
 
-            <button type="submit"
-                    (click)="previousState()"
-                    class="btn btn-info">
-                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            <h4 class="mt-4 mb-2">
+                <span jhiTranslate="global.about">About</span> <span>{{ specimen.code }}</span>
+            </h4>
+
+            <hr>
+
+            <div class="d-flex">
+                <div class="col-7 pl-0">
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.minerals" class="font-weight-bold"
+                            style="width: 200px;"> Minerals</label>
+                        <span *ngFor="let minerals of specimen.minerals; let last = last"> <a
+                            [routerLink]="['/mineral', minerals?.id, 'view']">{{ minerals.dutchName }}</a>{{ last ? '' :
+                            ', ' }}
+                        </span>
+                    </div>
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.location"
+                            class="d-inline-block align-top font-weight-bold" style="width: 200px;"> Location</label>
+                        <div *ngIf="specimen.locationId" class="d-inline-block">
+                            <a [routerLink]="['/location', specimen.locationId, 'view']">{{
+                                specimen.locationShortName }}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.status" class="font-weight-bold"
+                            style="width: 200px;">Status</label>
+                        <span>{{ specimen.statusName }}</span>
+                    </div>
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.fluorescent" class="font-weight-bold"
+                            style="width: 200px;">Fluorescent</label>
+                        <span>{{ specimen.fluorescent }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <label jhiTranslate="rockstockApp.specimen.remark" class="font-weight-bold" style="width: 200px;">Remark</label>
+                <span>{{ specimen.remark }}</span>
+            </div>
+
+
+            <h4 class="mt-4 mb-2">
+                <span jhiTranslate="global.origin">Origin</span>
+            </h4>
+
+            <hr>
+
+            <div class="d-flex mb-3">
+                <div class="col-7 pl-0">
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.acquiredDate" class="font-weight-bold"
+                            style="width: 200px;">Acquired Date</label>
+                        <span>{{ specimen.acquiredDate | date: 'dd/MM/yyyy'}}</span>
+                    </div>
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.acquiredAt" class="font-weight-bold"
+                            style="width: 200px;">Acquired At</label>
+                        <span>{{ specimen.acquiredAt }}</span>
+                    </div>
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.acquiredPrice" class="font-weight-bold"
+                            style="width: 200px;">Acquired Price</label>
+                        <span>{{ specimen.acquiredPrice }}</span>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.acquiredBy" class="font-weight-bold"
+                            style="width: 200px;">Acquired By</label>
+                        <span>{{ specimen.acquiredBy }}</span>
+                    </div>
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.acquiredFrom" class="font-weight-bold"
+                            style="width: 200px;">Acquired From</label>
+                        <span>{{ specimen.acquiredFrom }}</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <button type="submit" (click)="previousState()" class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>
+                &nbsp;<span jhiTranslate="entity.action.back">Back</span>
             </button>
 
-            <button type="button"
-                    [routerLink]="['/specimen', specimen.id, 'edit']"
-                    class="btn btn-primary">
-                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            <button type="button" [routerLink]="['/specimen', specimen.id, 'edit']" class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                &nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
             </button>
         </div>
     </div>

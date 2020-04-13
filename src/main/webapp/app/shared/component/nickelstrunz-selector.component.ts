@@ -71,15 +71,22 @@ export class NickelstrunzSelectorComponent implements OnInit {
     }
 
     onNickelStrunzOneSelected(): void {
+        // Update nsl2 list and clear value:
         this.nsForm.get(['nsl2'])!.enable();
         this.nsForm.patchValue({
             nsl2: null,
             nsl3: null
         });
-        this.updateNickelStrunzCode();
         this.searchService.getNickelStrunzLevelTwosForLevelOne(this.nsForm.get(['nsl1'])!.value.id)
                 .subscribe(( res: HttpResponse<INickelStrunzLevelTwo[]> ) => ( this.nickelstrunzleveltwos = res.body || [] ) );
-      }
+        
+        // Empty nsl3 list and disable:
+        this.nsForm.get(['nsl3'])!.disable();
+        this.nickelstrunzlevelthrees = [];
+        
+        // Update string code:
+        this.updateNickelStrunzCode();
+    }
 
     onNickelStrunzTwoSelected(): void {
         this.nsForm.get(['nsl3'])!.enable();
@@ -89,7 +96,7 @@ export class NickelstrunzSelectorComponent implements OnInit {
         this.updateNickelStrunzCode();
         this.searchService.getNickelStrunzLevelThreesForLevelTwo(this.nsForm.get(['nsl2'])!.value.id)
                 .subscribe(( res: HttpResponse<INickelStrunzLevelThree[]> ) => ( this.nickelstrunzlevelthrees = res.body || [] ) );
-        }
+    }
 
     onNickelStrunzThreeSelected(): void {
         this.updateNickelStrunzCode();

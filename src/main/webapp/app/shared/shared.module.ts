@@ -11,11 +11,12 @@ import { NickelstrunzSelectorComponent } from './component/nickelstrunz-selector
 import { SearchService } from './search/search.service';
 
 
+import {JhMaterialModule} from 'app/shared/jh-material.module';
 @NgModule({
-  imports: [RockstockSharedLibsModule],
+  imports: [JhMaterialModule, RockstockSharedLibsModule],
   declarations: [FindLanguageFromKeyPipe, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective, NickelstrunzSelectorComponent],
   entryComponents: [LoginModalComponent],
-  exports: [
+  exports: [JhMaterialModule, 
     RockstockSharedLibsModule,
     FindLanguageFromKeyPipe,
     AlertComponent,
