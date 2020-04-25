@@ -5,11 +5,28 @@ import java.util.Map;
 
 import org.piedere.rockstock.service.dto.NickelStrunzLevelThreeDTO;
 import org.piedere.rockstock.service.dto.NickelStrunzLevelTwoDTO;
+import org.piedere.rockstock.service.dto.search.SearchResultDTO;
 
 /**
  * Service Interface used to search for entities.
  */
 public interface SearchService {
+
+	// ----------------------------------------------------------------------------------------------------------------
+	// Generic search methods:
+	// ----------------------------------------------------------------------------------------------------------------
+
+	/**
+	 * Search for specimen/minerals/locations based on a search text.
+	 * 
+	 * @param searchText The search parameter.
+	 * @return The result. Can contain specimen/minerals/locations.
+	 */
+	SearchResultDTO search(String searchText);
+
+	// ----------------------------------------------------------------------------------------------------------------
+	// Methods regarding Nickel-Strunz:
+	// ----------------------------------------------------------------------------------------------------------------
 
 	/**
 	 * Get a list of nickel-strunz level twos for a given nickel-strunz level one.

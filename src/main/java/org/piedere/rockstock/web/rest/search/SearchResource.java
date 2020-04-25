@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.piedere.rockstock.service.dto.NickelStrunzLevelThreeDTO;
 import org.piedere.rockstock.service.dto.NickelStrunzLevelTwoDTO;
+import org.piedere.rockstock.service.dto.search.SearchResultDTO;
 import org.piedere.rockstock.service.search.SearchService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,27 @@ public class SearchResource {
 	public SearchResource(SearchService searchService) {
 		this.searchService = searchService;
 	}
+
+	// ----------------------------------------------------------------------------------------------------------------
+	// Generic search methods:
+	// ----------------------------------------------------------------------------------------------------------------
+
+	/**
+	 * Search for specimen/minerals/locations based on a search text.
+	 * 
+	 * @param searchText The search parameter.
+	 * @return The result. Can contain specimen/minerals/locations.
+	 */
+	@GetMapping("/search/{searchText}")
+	public ResponseEntity<SearchResultDTO> search(@PathVariable String searchText) {
+		log.debug("REST Search request");
+		SearchResultDTO searchResult = searchService.search(searchText);
+		return ResponseEntity.ok().body(searchResult);
+	}
+
+	// ----------------------------------------------------------------------------------------------------------------
+	// Methods regarding Nickel-Strunz:
+	// ----------------------------------------------------------------------------------------------------------------
 
 	/**
 	 * {@code GET  /nickel-strunz-level-twos} : get all the nickelStrunzLevelTwos
