@@ -1,55 +1,72 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="location">
-            <h2><span jhiTranslate="rockstockApp.location.detail.title">Location</span> {{ location.id }}</h2>
+            <h2>
+                <span jhiTranslate="rockstockApp.location.detail.title">Location</span>: <span>{{
+                    location.shortName }}</span>
+            </h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
-            <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="rockstockApp.location.shortName">Short Name</span></dt>
-                <dd>
-                    <span>{{ location.shortName }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.location.stateProvince">State Province</span></dt>
-                <dd>
-                    <span>{{ location.stateProvince }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.location.city">City</span></dt>
-                <dd>
-                    <span>{{ location.city }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.location.mine">Mine</span></dt>
-                <dd>
-                    <span>{{ location.mine }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.location.xPosition">X Position</span></dt>
-                <dd>
-                    <span>{{ location.xPosition }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.location.yPosition">Y Position</span></dt>
-                <dd>
-                    <span>{{ location.yPosition }}</span>
-                </dd>
-                <dt><span jhiTranslate="rockstockApp.location.country">Country</span></dt>
-                <dd>
-                    <div *ngIf="location.countryId">
-                        <a [routerLink]="['/country', location.countryId, 'view']">{{ location.countryCountryName }}</a>
-                    </div>
-                </dd>
-            </dl>
+            <div *ngIf="pictures.length > 0; else noPictures" class="d-block">
+                <div style="height: 270px; background: #e4e5e6; padding: 10px; overflow-x: overlay;" class="d-flex">
+                    <a *ngFor="let picture of pictures; let last = last" class="mx-2"
+                        [routerLink]="['/picture', picture?.id, 'view']"> <img
+                        [src]="'data:' + picture.dataContentType + ';base64,' + picture.data" style="max-height: 250px;"
+                        alt="picture image" />
+                    </a>
+                </div>
+            </div>
+            <ng-template #noPictures>
+            <div jhiTranslate="rockstockApp.picture.home.notFound">No pictures found.</div>
+            </ng-template>
 
-            <button type="submit"
-                    (click)="previousState()"
-                    class="btn btn-info">
-                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            <h4 class="mt-4 mb-2">
+                <span jhiTranslate="global.about">About</span> <span>{{ location.shortName }}</span>
+            </h4>
+
+            <hr>
+
+            <div class="mt-2">
+                <label jhiTranslate="rockstockApp.location.stateProvince" class="font-weight-bold" style="width: 220px;">State
+                    Province</label>
+                <span>{{ location.stateProvince }}</span>
+            </div>
+
+            <div class="mt-2">
+                <label jhiTranslate="rockstockApp.location.city" class="font-weight-bold" style="width: 220px;">City</label>
+                <span>{{ location.city }}</span>
+            </div>
+
+            <div class="mt-2">
+                <label jhiTranslate="rockstockApp.location.mine" class="font-weight-bold" style="width: 220px;">Mine</label>
+                <span>{{ location.mine }}</span>
+            </div>
+
+            <div class="mt-2">
+                <label jhiTranslate="rockstockApp.location.position" class="font-weight-bold" style="width: 220px;">Position</label>
+                <span *ngIf="location.xPosition; else elseBlock">{{ location.xPosition }}, {{ location.yPosition
+                    }}</span>
+                <ng-template #elseBlock> <span jhiTranslate="rockstockApp.location.noPosition"
+                    class="font-italic">No location given</span></ng-template>
+            </div>
+
+            <div class="mt-2">
+                <label jhiTranslate="rockstockApp.location.country" class="font-weight-bold" style="width: 220px;">Country</label>
+                <span *ngIf="location.countryId"><a [routerLink]="['/country', location.countryId, 'view']">{{
+                        location.countryCountryName }}</a></span>
+            </div>
+
+            <button type="submit" (click)="previousState()" class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>
+                &nbsp;<span jhiTranslate="entity.action.back">Back</span>
             </button>
 
-            <button type="button"
-                    [routerLink]="['/location', location.id, 'edit']"
-                    class="btn btn-primary">
-                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            <button type="button" [routerLink]="['/location', location.id, 'edit']" class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                &nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
             </button>
         </div>
     </div>

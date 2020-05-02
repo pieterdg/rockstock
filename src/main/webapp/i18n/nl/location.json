@@ -2,27 +2,29 @@
   "rockstockApp": {
     "location": {
       "home": {
-        "title": "Locations",
-        "createLabel": "Maak een nieuwe Location",
-        "createOrEditLabel": "Maak of wijzig een Location",
-        "notFound": "No Locations found"
+        "title": "Locaties",
+        "createLabel": "Voeg een locatie toe",
+        "createOrEditLabel": "Maak of wijzig een locatie",
+        "notFound": "Geen locaties gevonden"
       },
-      "created": "A new Location is created with identifier {{ param }}",
-      "updated": "A Location is updated with identifier {{ param }}",
-      "deleted": "A Location is deleted with identifier {{ param }}",
+      "created": "Een nieuwe locatie is toegevoegd met identifier {{ param }}",
+      "updated": "Een locatie met identifier {{ param }} is gewijzigd",
+      "deleted": "Een locatie met identifier {{ param }} is verwijderd",
       "delete": {
-        "question": "Bent u zeker dat u Location {{ id }} wilt verwijderen?"
+        "question": "Bent u zeker dat u locatie {{ id }} wilt verwijderen?"
       },
       "detail": {
-        "title": "Location"
+        "title": "Locatie"
       },
-      "shortName": "Short Name",
-      "stateProvince": "State Province",
-      "city": "City",
-      "mine": "Mine",
-      "xPosition": "X Position",
-      "yPosition": "Y Position",
-      "country": "Country"
+      "shortName": "Korte Naam",
+      "stateProvince": "Provincie",
+      "city": "Stad",
+      "mine": "Mijn/Groeve",
+      "xPosition": "X Positie",
+      "yPosition": "Y Positie",
+      "position": "Positie",
+      "noPosition": "X,Y coordinaten niet gekend",
+      "country": "Land"
     }
   }
 }

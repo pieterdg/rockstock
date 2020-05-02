@@ -2,24 +2,24 @@
   "rockstockApp": {
     "picture": {
       "home": {
-        "title": "Pictures",
-        "createLabel": "Maak een nieuwe Picture",
-        "createOrEditLabel": "Maak of wijzig een Picture",
-        "notFound": "No Pictures found"
+        "title": "Afbeeldingen",
+        "createLabel": "Voeg een afbeelding toe",
+        "createOrEditLabel": "Maak of wijzig een afbeelding",
+        "notFound": "Geen afbeeldingen gevonden"
       },
-      "created": "A new Picture is created with identifier {{ param }}",
-      "updated": "A Picture is updated with identifier {{ param }}",
-      "deleted": "A Picture is deleted with identifier {{ param }}",
+      "created": "Een nieuwe afbeelding is toegevoegd met identifier {{ param }}",
+      "updated": "Een afbeelding met identifier {{ param }} is gewijzigd",
+      "deleted": "Een afbeelding met identifier {{ param }} is verwijderd",
       "delete": {
-        "question": "Bent u zeker dat u Picture {{ id }} wilt verwijderen?"
+        "question": "Bent u zeker dat u afbeelding {{ id }} wilt verwijderen?"
       },
       "detail": {
-        "title": "Picture"
+        "title": "Afbeelding"
       },
       "data": "Data",
-      "description": "Description",
+      "description": "Beschrijving",
       "specimen": "Specimen",
-      "location": "Location"
+      "location": "Locatie"
     }
   }
 }

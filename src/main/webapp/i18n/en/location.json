@@ -22,6 +22,8 @@
       "mine": "Mine",
       "xPosition": "X Position",
       "yPosition": "Y Position",
+      "position": "Position",
+      "noPosition": "X,Y coordinates unknown",
       "country": "Country"
     }
   }

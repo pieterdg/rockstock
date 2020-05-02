@@ -1,7 +1,10 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="mineral">
-            <h2>{{ mineral.dutchName }}</h2>
+            <h2>
+                <span jhiTranslate="rockstockApp.mineral.detail.title">Mineral</span>: <span>{{
+                    mineral.dutchName }}</span>
+            </h2>
 
             <hr>
 
@@ -16,10 +19,7 @@
                     </a>
                 </div>
             </div>
-<!--             <div class="d-block">
-                <div style="height: 250px; background: #e4e5e6;">Room for pictures...</div>
-            </div>
- -->
+
             <h4 class="mt-4 mb-2">
                 <span jhiTranslate="global.about">About</span> <span>{{ mineral.dutchName }}</span>
             </h4>
