@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { ISpecimen } from 'app/shared/model/specimen.model';
 import { IPicture } from 'app/shared/model/picture.model';
 import { PictureSearchService } from 'app/shared/search/picture-search.service';
+import { PictureService } from 'app/entities/picture/picture.service';
 
 // import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap'; 
 
@@ -16,7 +18,8 @@ export class SpecimenDetailComponent implements OnInit {
   specimen: ISpecimen | null = null;
   pictures: IPicture[] = [];
 
-  constructor(protected activatedRoute: ActivatedRoute, private pictureSearchService: PictureSearchService /* , config: NgbCarouselConfig*/ ) {
+  constructor(protected activatedRoute: ActivatedRoute, private pictureSearchService: PictureSearchService, protected pictureService: PictureService, 
+          private router: Router /* , config: NgbCarouselConfig*/ ) {
 //      config.interval = 0;  
 //      config.wrap = true;  
 //      config.keyboard = false;  
@@ -36,6 +39,11 @@ export class SpecimenDetailComponent implements OnInit {
   
   onPicturesReceived(pictures: IPicture[]): void {
       this.pictures = pictures;
+  }
+  
+  addPicture(): void {
+      this.pictureService.setSpecimen(this.specimen || {});
+      this.router.navigateByUrl( '/picture/new' );      
   }
 
   previousState(): void {

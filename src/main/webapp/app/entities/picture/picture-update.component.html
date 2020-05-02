@@ -41,7 +41,7 @@
                            formControlName="description"/>
                 </div>
 
-                <div class="form-group">
+                <div *ngIf="fixedSpecimen" class="form-group">
                     <label class="form-control-label" jhiTranslate="rockstockApp.picture.specimen" for="field_specimen">Specimen</label>
                     <select class="form-control" id="field_specimen" name="specimen" formControlName="specimenId">
                         <option [ngValue]="null"></option>
@@ -49,7 +49,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div *ngIf="fixedLocation" class="form-group">
                     <label class="form-control-label" jhiTranslate="rockstockApp.picture.location" for="field_location">Location</label>
                     <select class="form-control" id="field_location" name="location" formControlName="locationId">
                         <option [ngValue]="null"></option>
@@ -63,7 +63,8 @@
                     <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
 
-                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving || (editForm.get('specimenId')!.value === null && editForm.get('locationId')!.value === null)"
+                 class="btn btn-primary">
                     <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
             </div>

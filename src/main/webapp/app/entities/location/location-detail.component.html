@@ -59,6 +59,8 @@
                         location.countryCountryName }}</a></span>
             </div>
 
+            <hr>
+
             <button type="submit" (click)="previousState()" class="btn btn-info">
                 <fa-icon icon="arrow-left"></fa-icon>
                 &nbsp;<span jhiTranslate="entity.action.back">Back</span>
@@ -67,6 +69,10 @@
             <button type="button" [routerLink]="['/location', location.id, 'edit']" class="btn btn-primary">
                 <fa-icon icon="pencil-alt"></fa-icon>
                 &nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+
+            <button type="button" (click)="addPicture()" class="btn btn-primary">
+                <span jhiTranslate="rockstockApp.picture.home.createLabel"> Add a picture </span>
             </button>
         </div>
     </div>

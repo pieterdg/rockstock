@@ -31,7 +31,7 @@
 
             <div *ngIf="picture.data" class="mb-3">
                 <img [src]="'data:' + picture.dataContentType + ';base64,' + picture.data" style="max-width: 100%;"
-                    alt="picture image" /><br/> {{ picture.dataContentType }}, {{ byteSize(picture.data) }}
+                    alt="picture image" /><br /> {{ picture.dataContentType }}, {{ byteSize(picture.data) }}
             </div>
 
             <button type="submit" (click)="previousState()" class="btn btn-info">
@@ -43,6 +43,7 @@
                 <fa-icon icon="pencil-alt"></fa-icon>
                 &nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
             </button>
+
         </div>
     </div>
 </div>

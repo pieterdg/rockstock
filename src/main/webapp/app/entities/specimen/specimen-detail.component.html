@@ -102,6 +102,7 @@
                 </div>
             </div>
 
+            <hr>
 
             <button type="submit" (click)="previousState()" class="btn btn-info">
                 <fa-icon icon="arrow-left"></fa-icon>
@@ -111,6 +112,10 @@
             <button type="button" [routerLink]="['/specimen', specimen.id, 'edit']" class="btn btn-primary">
                 <fa-icon icon="pencil-alt"></fa-icon>
                 &nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+
+            <button type="button" (click)="addPicture()" class="btn btn-primary">
+                <span jhiTranslate="rockstockApp.picture.home.createLabel"> Add a picture </span>
             </button>
         </div>
     </div>
