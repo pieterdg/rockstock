@@ -10,6 +10,9 @@ import { Router /* , ActivatedRoute, ParamMap */ } from '@angular/router';
 import { ISearchResult } from 'app/shared/search/search-result.model';
 import { SearchService } from 'app/shared/search/search.service';
 
+import { IPicture } from 'app/shared/model/picture.model';
+import { PictureSearchService } from 'app/shared/search/picture-search.service';
+
 @Component( {
     selector: 'jhi-home',
     templateUrl: './home.component.html',
@@ -21,8 +24,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     searchText?: string;
     searchResult?: ISearchResult;
-
-    constructor( private accountService: AccountService, private loginModalService: LoginModalService, private router: Router, private searchService: SearchService ) { }
+    
+    randomPicture?: IPicture;
+    
+    constructor( private accountService: AccountService, private loginModalService: LoginModalService, private router: Router,
+            private searchService: SearchService, private pictureSearchService: PictureSearchService ) { }
 
     ngOnInit(): void {
         this.authSubscription = this.accountService.getAuthenticationState().subscribe( account => ( this.account = account ) );
@@ -32,6 +38,9 @@ export class HomeComponent implements OnInit, OnDestroy {
             this.searchText = this.searchService.getLatestSearchText();
             this.search();
         }
+        
+        // Get a random picture for the front page:
+        this.pictureSearchService.getRandomPicture().subscribe(( res: HttpResponse<IPicture> ) => ( this.randomPicture = res.body || {} ));
     }
 
     isAuthenticated(): boolean {

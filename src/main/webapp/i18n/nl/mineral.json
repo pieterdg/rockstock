@@ -3,7 +3,7 @@
     "mineral": {
       "home": {
         "title": "Mineralen",
-        "createLabel": "Voeg een nieuw mineraal toe",
+        "createLabel": "Voeg een mineraal toe",
         "createOrEditLabel": "Voeg toe of wijzig een mineraal",
         "notFound": "Geen mineralen gevonden"
       },

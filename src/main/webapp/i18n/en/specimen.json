@@ -3,15 +3,15 @@
     "specimen": {
       "home": {
         "title": "Specimen",
-        "createLabel": "Create a new Specimen",
-        "createOrEditLabel": "Create or edit a Specimen",
+        "createLabel": "Add a specimen",
+        "createOrEditLabel": "Create or edit a specimen",
         "notFound": "No Specimen found"
       },
-      "created": "A new Specimen is created with identifier {{ param }}",
-      "updated": "A Specimen is updated with identifier {{ param }}",
-      "deleted": "A Specimen is deleted with identifier {{ param }}",
+      "created": "A new specimen is added with identifier {{ param }}",
+      "updated": "A specimen is updated with identifier {{ param }}",
+      "deleted": "A specimen is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Specimen {{ id }}?"
+        "question": "Are you sure you want to delete specimen {{ id }}?"
       },
       "detail": {
         "title": "Specimen"

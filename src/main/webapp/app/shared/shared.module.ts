@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { NickelstrunzSelectorComponent } from './component/nickelstrunz-selector.component';
 import { SearchResultComponent } from './component/search-result.component';
 import { SearchService } from './search/search.service';
+import { PictureSearchService } from './search/picture-search.service';
 
 
 import {JhMaterialModule} from 'app/shared/jh-material.module';
@@ -28,6 +29,6 @@ import {JhMaterialModule} from 'app/shared/jh-material.module';
     NickelstrunzSelectorComponent,
     SearchResultComponent
   ],
-  providers: [SearchService]
+  providers: [SearchService, PictureSearchService]
 })
 export class RockstockSharedModule {}

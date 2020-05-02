@@ -1,6 +1,13 @@
 <div class="row">
     <div class="col-md-3">
-        <span class="hipster img-fluid rounded"></span>
+        <!--         <span class="hipster img-fluid rounded"></span>
+ -->
+        <div *ngIf="randomPicture">
+            <a [routerLink]="['/picture', randomPicture?.id, 'view']"> <img
+                [src]="'data:' + randomPicture.dataContentType + ';base64,' + randomPicture.data"
+                style="max-height: 500px; max-width: 100%;" alt="picture image" />
+            </a>
+        </div>
     </div>
 
     <div class="col-md-9">
@@ -39,21 +46,18 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-4">
-                    <div class="alert alert-gray">
-                        <p class="lead" jhiTranslate="home.manage">Manage your collection:</p>
-                        <div class="btn-group-vertical">
-                            <button id="home-create-specimen" class="btn btn-secondary create-specimen col-md-12"
-                                [routerLink]="['/specimen/new']">
-                                <fa-icon [icon]="'plus'"></fa-icon>
-                                <span jhiTranslate="rockstockApp.specimen.home.createLabel"> Create new Specimen
-                                </span>
-                            </button>
-                            <button id="home-create-mineral" class="btn btn-secondary create-mineral col-md-12"
-                                [routerLink]="['/mineral/new']">
-                                <fa-icon [icon]="'plus'"></fa-icon>
-                                <span jhiTranslate="rockstockApp.mineral.home.createLabel"> Create new Mineral </span>
-                            </button>
-                        </div>
+                    <h4 jhiTranslate="home.manage">Manage your collection:</h4>
+                    <div class="btn-group-vertical">
+                        <button id="home-create-specimen" class="btn btn-secondary create-specimen col-md-12"
+                            [routerLink]="['/specimen/new']">
+                            <fa-icon [icon]="'plus'"></fa-icon>
+                            <span jhiTranslate="rockstockApp.specimen.home.createLabel"> Create new Specimen </span>
+                        </button>
+                        <button id="home-create-mineral" class="btn btn-secondary create-mineral col-md-12"
+                            [routerLink]="['/mineral/new']">
+                            <fa-icon [icon]="'plus'"></fa-icon>
+                            <span jhiTranslate="rockstockApp.mineral.home.createLabel"> Create new Mineral </span>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -3,11 +3,11 @@
     "specimen": {
       "home": {
         "title": "Specimen",
-        "createLabel": "Maak een nieuw specimen aan",
+        "createLabel": "Voeg een specimen toe",
         "createOrEditLabel": "Voeg toe of wijzig een specimen",
         "notFound": "Specimen niet gevonden"
       },
-      "created": "Een nieuw specimen is aangemaakt met identifier {{ param }}",
+      "created": "Een nieuw specimen is toegevoegd met identifier {{ param }}",
       "updated": "Een specimen met identifier {{ param }} is gewijzigd",
       "deleted": "Een specimen met identifier {{ param }} is verwijderd",
       "delete": {

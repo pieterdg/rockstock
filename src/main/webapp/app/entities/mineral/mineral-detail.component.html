@@ -7,10 +7,19 @@
 
             <jhi-alert-error></jhi-alert-error>
 
-            <div class="d-block">
+            <div *ngIf="pictures" class="d-block">
+                <div style="height: 270px; background: #e4e5e6; padding: 10px; overflow-x: overlay;" class="d-flex">
+                    <a *ngFor="let picture of pictures; let last = last" class="mx-2"
+                        [routerLink]="['/picture', picture?.id, 'view']"> <img
+                        [src]="'data:' + picture.dataContentType + ';base64,' + picture.data" style="max-height: 250px;"
+                        alt="picture image" />
+                    </a>
+                </div>
+            </div>
+<!--             <div class="d-block">
                 <div style="height: 250px; background: #e4e5e6;">Room for pictures...</div>
             </div>
-
+ -->
             <h4 class="mt-4 mb-2">
                 <span jhiTranslate="global.about">About</span> <span>{{ mineral.dutchName }}</span>
             </h4>
