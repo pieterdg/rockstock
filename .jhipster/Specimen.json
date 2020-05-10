@@ -47,6 +47,13 @@
         },
         {
             "relationshipType": "many-to-one",
+            "otherEntityName": "storageLocation",
+            "otherEntityRelationshipName": "specimen",
+            "relationshipName": "storageLocation",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
             "otherEntityName": "location",
             "otherEntityRelationshipName": "specimen",
             "relationshipName": "location",

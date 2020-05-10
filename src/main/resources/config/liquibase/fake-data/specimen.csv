@@ -1,11 +1,4 @@
-id;code;acquired_date;acquired_at;acquired_price;acquired_by;acquired_from;remark;fluorescent
-1;quantify;2020-02-15;parse Identity;29412;PNG THX Multi-tiered;Malta Planner North Dakota;Licensed e-markets JBOD;false
-2;navigate Streamlined Gloves;2020-02-15;invoice Sudanese Pound;49376;copy Sausages;Personal Loan Account infrastructures;Health Concrete Chief;true
-3;Berkshire toolset plug-and-play;2020-02-15;sticky Corners;50932;Function-based;RSS;payment Strategist;false
-4;Global;2020-02-15;Virtual;34394;Producer Tenge;Point disintermediate;Cambridgeshire;true
-5;silver multi-byte;2020-02-14;Gorgeous Granite Salad;41692;payment Small Metal Bacon;override;Small mission-critical;true
-6;multi-tasking California leverage;2020-02-15;Iranian Rial navigating Investor;25073;Configuration;Manat Berkshire;hack;false
-7;Pre-emptive;2020-02-15;International East Caribbean Dollar models;41326;B2C;Bedfordshire Grass-roots Massachusetts;Books Vermont copying;false
-8;Plastic;2020-02-14;Web extend Massachusetts;45340;deposit;time-frame orange;leverage;true
-9;Meadow;2020-02-15;cyan;38346;transmit;Sausages program;compress Pass;true
-10;Right-sized Engineer Egyptian Pound;2020-02-15;Legacy Senegal Arizona;6968;strategize encoding web-readiness;Credit Card Account Radial;South Georgia and the South Sandwich Islands;true
+id;code;acquired_date;acquired_at;acquired_price;acquired_by;acquired_from;remark;fluorescent;location_id  
+1;Nr1;2019-04-01;Beurs 1;10.0;Yvonne;;;FALSE;1
+2;Nr2;2019-04-02;Beurs 2;10.0;Pieter;;;FALSE;1
+3;Nr3;2019-04-03;Gevonden;NULL;;Jantje;Jah, hier kan ik wel nen boom over opzetten...;TRUE;2

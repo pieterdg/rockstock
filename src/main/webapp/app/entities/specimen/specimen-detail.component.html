@@ -44,6 +44,11 @@
                                 specimen.locationShortName }}</a>
                         </div>
                     </div>
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.remark" class="font-weight-bold"
+                            style="width: 200px;">Remark</label>
+                        <span>{{ specimen.remark }}</span>
+                    </div>
                 </div>
                 <div class="col-5">
                     <div class="mt-2">
@@ -56,13 +61,13 @@
                             style="width: 200px;">Fluorescent</label>
                         <span>{{ specimen.fluorescent }}</span>
                     </div>
+                    <div class="mt-2">
+                        <label jhiTranslate="rockstockApp.specimen.storageLocation" class="font-weight-bold"
+                            style="width: 200px;">Storage Location</label>
+                        <span>{{ specimen.storageLocationName }}</span>
+                    </div>
                 </div>
             </div>
-            <div class="mt-2">
-                <label jhiTranslate="rockstockApp.specimen.remark" class="font-weight-bold" style="width: 200px;">Remark</label>
-                <span>{{ specimen.remark }}</span>
-            </div>
-
 
             <h4 class="mt-4 mb-2">
                 <span jhiTranslate="global.origin">Origin</span>

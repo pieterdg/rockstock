@@ -6,10 +6,14 @@ entity Specimen {
     acquiredBy String,
     acquiredFrom String,
     remark String,
-    fluorescent Boolean,
+    fluorescent Boolean
 }
 
 entity SpecimenStatus {
+	name String required
+}
+
+entity StorageLocation {
 	name String required
 }
 
@@ -70,6 +74,7 @@ relationship ManyToOne {
 	Picture{specimen(code)} to Specimen,
 	Picture{location(shortName)} to Location,
     Specimen{status(name)} to SpecimenStatus
+    Specimen{storageLocation(name)} to StorageLocation
 }
 
 relationship ManyToOne {

@@ -1,0 +1,22 @@
+{
+  "rockstockApp": {
+    "storageLocation": {
+      "home": {
+        "title": "Storage Locations",
+        "createLabel": "Create a new Storage Location",
+        "createOrEditLabel": "Create or edit a Storage Location",
+        "notFound": "No Storage Locations found"
+      },
+      "created": "A new Storage Location is created with identifier {{ param }}",
+      "updated": "A Storage Location is updated with identifier {{ param }}",
+      "deleted": "A Storage Location is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Storage Location {{ id }}?"
+      },
+      "detail": {
+        "title": "Storage Location"
+      },
+      "name": "Name"
+    }
+  }
+}

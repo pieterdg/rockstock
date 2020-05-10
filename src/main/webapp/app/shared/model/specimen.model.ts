@@ -14,6 +14,8 @@ export interface ISpecimen {
   fluorescent?: boolean;
   statusName?: string;
   statusId?: number;
+  storageLocationName?: string;
+  storageLocationId?: number;
   locationShortName?: string;
   locationId?: number;
   minerals?: IMineral[];
@@ -33,6 +35,8 @@ export class Specimen implements ISpecimen {
     public fluorescent?: boolean,
     public statusName?: string,
     public statusId?: number,
+    public storageLocationName?: string,
+    public storageLocationId?: number,
     public locationShortName?: string,
     public locationId?: number,
     public minerals?: IMineral[],

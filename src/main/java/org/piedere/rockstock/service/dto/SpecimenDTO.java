@@ -36,6 +36,10 @@ public class SpecimenDTO implements Serializable {
 
     private String statusName;
 
+    private Long storageLocationId;
+
+    private String storageLocationName;
+
     private Long locationId;
 
     private String locationShortName;
@@ -129,6 +133,22 @@ public class SpecimenDTO implements Serializable {
         this.statusName = specimenStatusName;
     }
 
+    public Long getStorageLocationId() {
+        return storageLocationId;
+    }
+
+    public void setStorageLocationId(Long storageLocationId) {
+        this.storageLocationId = storageLocationId;
+    }
+
+    public String getStorageLocationName() {
+        return storageLocationName;
+    }
+
+    public void setStorageLocationName(String storageLocationName) {
+        this.storageLocationName = storageLocationName;
+    }
+
     public Long getLocationId() {
         return locationId;
     }
@@ -188,6 +208,8 @@ public class SpecimenDTO implements Serializable {
             ", fluorescent='" + isFluorescent() + "'" +
             ", statusId=" + getStatusId() +
             ", statusName='" + getStatusName() + "'" +
+            ", storageLocationId=" + getStorageLocationId() +
+            ", storageLocationName='" + getStorageLocationName() + "'" +
             ", locationId=" + getLocationId() +
             ", locationShortName='" + getLocationShortName() + "'" +
             ", minerals='" + getMinerals() + "'" +

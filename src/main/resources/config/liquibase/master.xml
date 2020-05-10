@@ -21,6 +21,8 @@
     <include file="config/liquibase/changelog/20200215155000_added_entity_NickelStrunzLevelThree.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200215155100_added_entity_Location.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200215155200_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200503110700_added_entity_StorageLocation.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20200215154300_added_entity_constraints_Specimen.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200215154500_added_entity_constraints_Mineral.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200215154600_added_entity_constraints_Series.xml" relativeToChangelogFile="false"/>
@@ -28,6 +30,5 @@
     <include file="config/liquibase/changelog/20200215154900_added_entity_constraints_NickelStrunzLevelTwo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200215155000_added_entity_constraints_NickelStrunzLevelThree.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200215155100_added_entity_constraints_Location.xml" relativeToChangelogFile="false"/>
-    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

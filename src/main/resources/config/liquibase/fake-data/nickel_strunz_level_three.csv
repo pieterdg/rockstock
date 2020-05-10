@@ -1,11 +1,360 @@
-id;code;name;short_name;parent_id
-1;Strategist target;Curve;Integration Forint olive;1
-2;solid state Architect;extend;metrics;2
-3;Intelligent Concrete Table Gorgeous;alarm;Automotive;3
-4;invoice;metrics transmitting;harness;4
-5;plug-and-play;Metal Clothing neural-net;Movies bandwidth;5
-6;Nevada;unleash Naira bandwidth;Clothing generate;6
-7;Distributed;maroon Multi-tiered Investment Account;wireless Forint Associate;7
-8;Bedfordshire;dynamic;Mandatory revolutionize;8
-9;Maine Checking Account;clicks-and-mortar;Program product;9
-10;hacking mesh;Handcrafted back-end CSS;Fall Garden embrace;10
+id;code;name;parent_id
+1;A;Copper-cupalite family;1
+2;B;Zinc-brass family;1
+3;C;Indium-tin family;1
+4;D;Mercury-amalgam family;1
+5;E;Iron-chromium family;1
+6;F;Platinum group elements;1
+7;G;PGE-metal alloys;1
+8;H;Miscellaneous Elements, alloys;1
+9;A;Carbides;2
+10;B;Silicides;2
+11;C;Nitrides;2
+12;D;Phosphides;2
+13;A;Arsenic group elements;3
+14;B;Carbon-silicon family;3
+15;C;Sulfur-selenium-iodine;3
+16;A;Nonmetallic carbides;4
+17;B;Nonmetallic nitrides;4
+18;A;Alloys of metalloids with Cu, Ag, Au;5
+19;B;Ni-metalloid alloys;5
+20;C;Alloys of metalloids with PGE;5
+21;A;With Cu, Ag, Au;6
+22;B;With Ni;6
+23;C;With Rh, Pd, Pt, etc.;6
+24;D;With Hg, Tl;6
+25;E;With Pb (Bi);6
+26;A;With Cu;7
+27;B;With Zn, Fe, Cu, Ag, etc.;7
+28;C;With Ni, Fe, Co, PGE, etc.;7
+29;D;With Sn, Pb, Hg, etc.;7
+30;A;M:S = 3:4;8
+31;B;M:S = 2:3;8
+32;C;Variable M:S;8
+33;A;M:S = 1:2 - With Cu, Ag, Au;9
+34;B;M:S = 1:2, with Fe, Co, Ni, PGE, etc.;9
+35;C;M:S = 1:>2;9
+36;A;With As, (Sb), S;10
+37;B;With alkalies (without Cl, etc.);10
+38;C;With Cl, Br, I (halide-sulfides);10
+39;D;With O, OH, H2O;10
+40;A;Neso-sulfarsenites, etc. without additional S;11
+41;B;Neso-sulfarsenites, etc. with additional S;11
+42;C;Poly-sulfarsenites;11
+43;A;With Cu, Ag, Fe (without Pb);12
+44;B;With Cu, Ag, Fe, Sn and Pb;12
+45;C;With only Pb;12
+46;D;With Tl;12
+47;E;With alkalies, H2O;12
+48;F;With SnS and PbS archetype structure units;12
+49;A;Galena derivatives with little or no Pb;13
+50;B;Galena derivatives, with Pb;13
+51;C;Galena derivatives, with Tl;13
+52;A;Sulfarsenates with (As,Sb)S4�tetrahedra;14
+53;B;Sulfarsenates with additional S;14
+54;A;Without essential Pb;15
+55;B;With essential Pb;15
+56;A;Oxysulfosalts of Alkalies and Alkali Earths;16
+57;A;M:X = 1:1, 2:3, 3:5, etc.;17
+58;B;M:X = 1:2;17
+59;C;M:X = 1:3;17
+60;A;M:X = 1:1 and 2:3;18
+61;B;M:X = 1:2;18
+62;C;M:X = 1:3;18
+63;D;Simple halides with H2O and additional OH;18
+64;A;Borofluorides;19
+65;B;Neso-aluminofluorides;19
+66;C;Soro-aluminofluorides;19
+67;D;Ino-aluminofluorides;19
+68;E;Phyllo-aluminofluorides;19
+69;F;Tekto-aluminofluorides;19
+70;G;Aluminofluorides with CO3, SO4, PO4;19
+71;H;Silicofluorides;19
+72;J;"With MX6�complexes; M = Fe, Mn, Cu";19
+73;K;Halides of Bi, etc.;19
+74;A;With Cu, etc., without Pb;20
+75;B;With Pb, Cu, etc.;20
+76;C;With Pb (As,Sb,Bi), without Cu;20
+77;D;With Hg;20
+78;E;With Rare-Earth Elements;20
+79;A;Cation:Anion (M:O) = 2:1 (and 1.8:1);21
+80;B;"M:O = 1:1 (and up to 1:1.25); with small to medium-sized cations only";21
+81;C;"M:O = 1:1 (and up to 1:1.25); with large cations (+- smaller ones)";21
+82;A;With small and medium-sized cations;22
+83;B;With only medium-sized cations;22
+84;C;With medium-sized and large cations;22
+85;D;With only large cations;22
+86;A;With small cations;23
+87;B;With medium-sized cations;23
+88;C;With large and medium-sized cations;23
+89;A;With small cations: Silica family;24
+90;B;"With medium-sized cations; chains of edge-sharing octahedra";24
+91;C;"With medium-sized cations; sheets of edge-sharing octahedra";24
+92;D;"With medium-sized cations; frameworks of edge-sharing octahedra";24
+93;E;"With medium-sized cations; with various polyhedra";24
+94;F;"With large (+- medium-sized) cations; dimers and trimers of edgesharing octahedra";24
+95;G;"With large (+- medium-sized) cations; chains of edge-sharing octahedra";24
+96;H;"With large (+- medium-sized) cations; sheets of edge-sharing octahedra";24
+97;J;"With large (+- medium-sized) cations; polyhedral frameworks";24
+98;K;"With large (+- medium-sized) cations; tunnel structures";24
+99;L;"With large (+- medium-sized) cations; fluorite-type structures";24
+100;M;"With large (+- medium-sized) cations; unclassified";24
+101;A;Oxides with metal : oxygen < 1:2 (M2O5, MO3);25
+102;A;"Hydroxides with OH, without H2O; corner-sharing tetrahedra";26
+103;B;"Hydroxides with OH, without H2O; insular octahedra";26
+104;C;"Hydroxides with OH, without H2O; corner-sharing octahedra";26
+105;D;"Hydroxides with OH, without H2O; chains of edge-sharing octahedra";26
+106;E;"Hydroxides with OH, without H2O; sheets of edge-sharing octahedra";26
+107;F;"Hydroxides with OH, without H2O; various polyhedra";26
+108;G;"Hydroxides with OH, without H2O; unclassified";26
+109;H;"Hydroxides with H2O +- (OH); insular octahedra";26
+110;J;"Hydroxides with H2O +- (OH); corner-sharing octahedra";26
+111;K;"Hydroxides with H2O +- (OH); chains of edge-sharing octahedra";26
+112;L;"Hydroxides with H2O +- (OH); sheets of edge-sharing octahedra";26
+113;M;"Hydroxides with H2O +- (OH); unclassified";26
+114;N;"Hydroxides with H2O�(OH); frameworks of corner and/or face-sharing octahedra";26
+115;A;Without additional cations;27
+116;B;"With additional cations (K, Ca, Ba, Pb, etc.); with mainly UO2(O,OH)5�pentagonal polyhedra";27
+117;C;"With additional cations; with mainly UO2(O,OH)6�hexagonal polyhedra";27
+118;A;V[>4] Nesovanadates;28
+119;B;Uranyl Sorovanodates;28
+120;C;[6]-Sorovanadates;28
+121;D;Inovanadates;28
+122;E;Phyllovanadates;28
+123;F;Tektovanadates;28
+124;G;Unclassified V oxides;28
+125;A;"Arsenites, antimonites, bismuthites; without additional anions, without H2O";29
+126;B;"Arsenites, antimonites, bismuthites; with additional anions, without H2O";29
+127;C;"Arsenites, antimonites, bismuthites; without additional anions, with H2O";29
+128;D;"Arsenites, antimonites, bismuthites; with additional anions, with H2O";29
+129;E;Sulfites;29
+130;F;Selenites without additional anions, without H2O;29
+131;G;Selenites with additional anions, without H2O;29
+132;H;Selenites without additional anions, with H2O;29
+133;J;Selenites with additional anions, with H2O;29
+134;K;Tellurites without additional anions, without H2O;29
+135;L;Tellurites with additional anions, without H2O;29
+136;M;Tellurites without additional anions, with H2O;29
+137;N;Tellurites with additional anions, with H2O;29
+138;A;Iodates without additional anions, without H2O;30
+139;B;Iodates with additional anions, without H2O;30
+140;C;Iodates without additional anions, with H2O;30
+141;D;Iodates with additional anions, with H2O;30
+142;A;Alkali carbonates;31
+143;B;Alkali-earth (and other M2+) carbonates;31
+144;C;Alkali and alkali-earth carbonates;31
+145;D;With rare-earth elements (REE);31
+146;A;With Cu, Co, Ni, Zn, Mg, Mn;32
+147;B;With alkalies, etc.;32
+148;C;With alkali-earth cations;32
+149;D;With rare earth elements (REE);32
+150;E;With Pb, Bi;32
+151;F;With (Cl), SO4, PO4, TeO3;32
+152;A;With medium-sized cations;33
+153;B;With large cations (alkali and alkali-earth carbonates);33
+154;C;With rare earth elements (REE);33
+155;A;With medium-sized cations;34
+156;B;With large and medium-sized cations;34
+157;C;With large cations;34
+158;A;UO2:CO3�> 1:1;35
+159;B;UO2:CO3�= 1:1;35
+160;C;UO2:CO3�< 1:1 - 1:2;35
+161;D;UO2:CO3�= 1:3;35
+162;E;UO2:CO3= 1:4;35
+163;F;UO2:CO3�= 1:5;35
+164;G;With SO4�or SiO4;35
+165;A;Without OH or H2O;36
+166;B;With OH;36
+167;C;With H2O;36
+168;D;With OH (etc.) and H2O;36
+169;A;"BO3, without additional anions; 1(D).";37
+170;B;"BO3, with additional anions; 1(D) + OH, etc.";37
+171;C;"B(O,OH)4, without and with additional anions; 1(T), 1(T)+OH, etc";37
+172;A;"Neso-diborates with double triangles B2(O,OH)5; 2(2D); 2(2D) + OH, etc.";38
+173;B;"Neso-diborates with double tetrahedra B2O(OH)6; 2(2T)";38
+174;C;Ino-diborates with triangles and/or tetrahedra;38
+175;D;Tektodiborates with tetrahedra;38
+176;A;Neso-triborates;39
+177;B;Ino-triborates;39
+178;C;Phyllo-triborates;39
+179;A;Neso-tetraborates;40
+180;B;Ino-tetraborates;40
+181;C;Phyllo-tetraborates;40
+182;D;Tekto-tetraborates;40
+183;A;Neso-pentaborates;41
+184;B;Ino-pentaborates;41
+185;C;Phyllo-pentaborates;41
+186;D;Tekto-pentaborates;41
+187;A;Neso-hexaborates;42
+188;B;Ino-hexaborates;42
+189;C;Phyllo-hexaborates;42
+190;A;Tekto-heptaborates;43
+191;B;Phyllo-nonborates, etc.;43
+192;C;Tekto-dodecaborates;43
+193;D;Mega-tektoborates;43
+194;A;Unclassified borates;44
+195;A;With small cations;45
+196;B;With medium-sized cations;45
+197;C;With medium-sized and large cations;45
+198;D;With only large cations;45
+199;A;With small cations;46
+200;B;With medium-sized cations;46
+201;C;With medium-sized and large cations;46
+202;D;With only large cations;46
+203;A;With small cations;47
+204;B;With only medium-sized cations;47
+205;C;With medium-sized and large cations;47
+206;D;With only large cations;47
+207;A;With small cations;48
+208;B;"With only medium-sized cations; insular octahedra and finite units";48
+209;C;"With only medium-sized cations; chains of edge-sharing octahedra";48
+210;D;"With only medium-sized cations; sheets of edge-sharing octahedra";48
+211;E;"With only medium-sized cations; unclassified";48
+212;F;With large and medium-sized cations;48
+213;G;"With large and medium-sized cations; with NO3, CO3, B(OH)4, SiO4�or IO3";48
+214;A;Without cations;49
+215;B;With medium-sized cations;49
+216;C;With medium-sized and large cations;49
+217;A;Without additional anions;50
+218;B;With additional O,V, S, Cl;50
+219;C;With PO4, AsO4, SiO4;50
+220;D;Dichromates;50
+221;A;Without additional anions or H2O;51
+222;B;With additional anions and/or H2O;51
+223;A;With U4+;52
+224;B;With U6+;52
+225;A;Thiosulfates of Pb;53
+226;A;With small cations (some also with larger ones);54
+227;B;With medium-sized cations;54
+228;C;With medium-sized and large cations;54
+229;D;With only large cations;54
+230;A;With small and medium-sized cations;55
+231;B;With only medium-sized cations, (OH, etc.):RO4�about 1:1;55
+232;C;With only medium-sized cations, (OH, etc.):RO4�> 1:1 and < 2:1;55
+233;D;With only medium-sized cations, (OH, etc.):RO4= 2:1;55
+234;E;With only medium-sized cations, (OH, etc.):RO4�> 2:1;55
+235;F;With medium-sized and large cations, (OH, etc.):RO4< 0.5:1;55
+236;G;With medium-sized and large cations, (OH, etc.):RO4�= 0.5:1;55
+237;H;With medium-sized and large cations, (OH,etc.):RO4�= 1:1;55
+238;J;With medium-sized and large cations, (OH, etc.):RO4= 1:5:1;55
+239;K;With medium-sized and large cations, (OH, etc.):RO4�= 2:1, 2.5:1;55
+240;L;With medium-sized and large cations, (OH, etc.):RO4�= 3:1;55
+241;M;With medium-sized and large cations, (OH, etc.):RO4�= 4:1;55
+242;N;With only large cations, (OH, etc.):RO4�= 0.33:1;55
+243;O;With only large cations, (OH, etc.):RO4�about 1:1;55
+244;A;With small and large/medium cations;56
+245;B;With only medium-sized cations, RO4:H2O = 1:1;56
+246;C;With only medium-sized cations, RO4:H2O = 1:1.5;56
+247;D;With only medium-sized cations, RO4:H2O = 1:2;56
+248;E;With only medium-sized cations, RO4:H2O about 1:2.5;56
+249;F;With large and medium-sized cations, RO4:H2O > 1:1;56
+250;G;With large and medium-sized cations, RO4:H2O = 1:1;56
+251;H;With large and medium-sized cations, RO4:H2O < 1:1;56
+252;J;With only large cations;56
+253;A;With small (and occasionally larger) cations;57
+254;B;With only medium-sized cations, (OH, etc.):RO4< 1:1;57
+255;C;With only medium-sized cations, (OH, etc.):RO4�= 1:1 and < 2:1;57
+256;D;With only medium-sized cations, (OH, etc.):RO4= 2:1;57
+257;E;With only medium-sized cations, (OH, etc.):RO4�= 3:1;57
+258;F;With only medium-sized cations, (OH,etc.):RO4�> 3:1;57
+259;G;With large and medium-sized cations, (OH, etc.):RO4< 0.5:1;57
+260;H;With large and medium-sized cations, (OH, etc.):RO4�< 1:1;57
+261;J;With large and medium-sized cations, (OH, etc.):RO4�= 1:1;57
+262;K;With large and medium-sized cations, (OH, etc.):RO4�> 1:1 and < 2:1;57
+263;L;With large and medium-sized cations, (OH, etc.):RO4�= 2:1;57
+264;M;With large and medium-sized cations, (OH, etc.):RO4�> 2:1;57
+265;N;With only large cations;57
+266;O;With CO3, SO4, SiO4;57
+267;A;UO2:RO4�= 1:2;58
+268;B;UO2:RO4�= 1:1;58
+269;C;UO2:RO4�= 3:2;58
+270;D;Unclassified;58
+271;A;"Polyphosphates, etc., without OH and H2O; dimers of corner-sharing RO4�tetrahedra.";59
+272;B;Polyphosphates, etc., with OH only;59
+273;C;Polyphosphates, etc., with H2O only;59
+274;D;Polyphosphates, etc., with OH and H2O;59
+275;E;Ino-[4]-vanadates;59
+276;A;"Nesosilicates without additional anions; cations in tetrahedral [4] coordination";60
+277;B;"Nesosilicates without additional anions; cations in [4] and greater coordination";60
+278;C;"Nesosilicates without additional anions; cations in octahedral [6] coordination";60
+279;D;"Nesosilicates without additional anions; cations in [6] and/or greater coordination";60
+280;E;"Nesosilicates with additional anions (O,OH,F,H2O); cations in tetrahedral [4] coordination";60
+281;F;"Nesosilicates with additional anions; cations in [4], [5] and/or only [6] coordination";60
+282;G;"Nesosilicates with additional anions; cations in > [6] +- [6] coordination";60
+283;H;Nesosilicates with CO3, SO4, PO4, etc.;60
+284;J;Nesosilicates with BO3�triangles and/or B[4], Be[4] tetrahedra, cornersharing with SiO4;60
+285;K;Uranyl neso- and polysilicates;60
+286;A;"Si2O7�groups, without non-tetrahedral anions; cations in tetrahedral [4] coordination";61
+287;B;"Si2O7�groups, without non-tetrahedral anions; cations in tetrahedral [4] and greater coordination";61
+288;C;"Si2O7�groups, without non-tetrahedral anions; cations in octahedral [6] and greater coordination";61
+289;D;"Si2O7�groups, with additional anions; cations in tetrahedral [4] and greater coordination";61
+290;E;"Si2O7�groups, with additional anions; cations in octahedral [6] and greater coordination";61
+291;F;"Sorosilicates with mixed SiO4�and Si2O7�groups; cations in tetrahedral [4] and greater coordination";61
+292;G;"Sorosilicates with mixed SiO4�and Si2O7�groups; cations in octahedral [6] and greater coordination";61
+293;H;"Sorosilicates with Si3O10, Si4O11, etc. anions; cations in tetrahedral [4] and greater coordination";61
+294;J;"Sorosilicates with Si3O10, Si4O11, etc. anions; cations in octahedral [6] and greater coordination";61
+295;K;Unclassified sorosilicates;61
+296;A;[Si3O9]6- 3-membered single rings (dreier-Einfachringe), without insular complex anions;62
+297;B;[Si3O9]6- 3-membered single rings, with insular complex anions;62
+298;C;[Si3O9]6- - branched 3-membered single rings;62
+299;D;[Si3O9]6- 3-membered double rings;62
+300;E;[Si4O12]8- 4-membered single rings (vierer-Einfachringe), without insular complex anions;62
+301;F;[Si4O12]8- 4-membered single rings, with insular complex anions;62
+302;G;[Si4O12]8- branched 4-membered single rings;62
+303;H;[Si4O12]8- 4-membered double rings;62
+304;J;[Si6O18]12- 6-membered single rings (sechser-Einfachringe), without insular complex anions;62
+305;K;[Si6O18]12- 6-membered single rings, with insular complex anions;62
+306;L;[Si6O18]12- branched 6-membered single rings;62
+307;M;[Si6O18]12- 6-membered double rings (sechser-Doppelringe);62
+308;N;[Si8O24]16- 8-membered rings;62
+309;O;[Si9O27]18- 9-membered rings;62
+310;P;12-membered and larger rings;62
+311;A;"Inosilicates with 2-periodic single chains, Si2O6; pyroxene family";63
+312;B;"Inosilicates with 2-periodic single chains, Si2O6; Pyroxene-related minerals";63
+313;C;"Inosilicates with branched 2-periodic single chains; Si2O6�+ 2SiO3�Si4O12";63
+314;D;"Inosilicates with 2-periodic double chains, Si4O11; Orthoamphiboles";63
+315;E;"Inosilicates with 2-periodic double chains, Si4O11; Clinoamphiboles";63
+316;F;Inosilicates with 2-periodic multiple chains;63
+317;G;Inosilicates with 3-periodic single and multiple chains;63
+318;H;Inosilicates with 4-periodic single chains, Si4O12;63
+319;J;Inosilicates with 4-periodic double and triple chains;63
+320;K;Inosilicates with 5-periodic single chains;63
+321;L;Inosilicates with 5-periodic double chains, Si10O28;63
+322;M;Inosilicates with 6-periodic single chains;63
+323;N;Inosilicates with 6-periodic double chains;63
+324;O;Inosilicates with 7-, 8-, 10-, 12- and 14-periodic chains;63
+325;P;Transitional ino-phyllosilicate structures;63
+326;Q;Modular Inosilicate-Sorosilicate Structures;63
+327;A;Single nets of tetrahedra with 4-, 5-, (6-), and 8-membered rings;64
+328;B;Double nets with 4- and 6-membered rings;64
+329;C;Phyllosilicates with mica sheets, composed of tetrahedral and octahedral nets;64
+330;D;Phyllosilicates with kaolinite layers composed of tetrahedral and octahedral nets;64
+331;E;Single tetrahedral nets of 6-membered rings connected by octahedral nets or octahedral bands;64
+332;F;Single nets with 6-membered rings, connected by M[4], M[8], etc.;64
+333;G;Double nets with 6-membered and larger rings;64
+334;H;Transitional structures between phyllosilicate and other silicate units;64
+335;J;Unclassified phyllosilicates;64
+336;A;Tektosilicates without additional non-tetrahedral anions;65
+337;B;Tektosilicates with additional anions;65
+338;A;Zeolites with T5O10�Units � The Fibrous Zeolites;66
+339;B;Chains of single connected 4-membered rings;66
+340;C;Chains of doubly-connected 4-membered rings;66
+341;D;Chains of 6-membered rings � tabular zeolites;66
+342;E;Chains of T10O20�Tetrahedra;66
+343;F;Other Rare Zeolites;66
+344;G;Unclassified zeolites;66
+345;A;With Alkali and Alkali-earth Elements;67
+346;B;With Ti, V, Cr;67
+347;C;With Mn, Fe;67
+348;D;With Co, Ni;67
+349;E;With Cu, Zn;67
+350;F;With Nb, Ta, Zr;67
+351;G;With REE, Th;67
+352;H;With Pb;67
+353;A;Germanates;68
+354;A;Formates, Acetates, etc.;69
+355;B;Oxalates;69
+356;C;Benzine Salts;69
+357;D;Cyanates;69
+358;A;Hydrocarbons;70
+359;A;Miscellaneous Organic Minerals;71

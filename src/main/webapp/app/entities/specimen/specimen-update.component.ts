@@ -15,6 +15,8 @@ import { ILocation } from 'app/shared/model/location.model';
 import { LocationService } from 'app/entities/location/location.service';
 import { IMineral } from 'app/shared/model/mineral.model';
 import { MineralService } from 'app/entities/mineral/mineral.service';
+import { IStorageLocation } from 'app/shared/model/storage-location.model';
+import { StorageLocationService } from 'app/entities/storage-location/storage-location.service';
 
 type SelectableEntity = ISpecimenStatus | ILocation | IMineral;
 
@@ -27,6 +29,7 @@ export class SpecimenUpdateComponent implements OnInit {
     specimenstatuses: ISpecimenStatus[] = [];
     locations: ILocation[] = [];
     minerals: IMineral[] = [];
+    storageLocations: IStorageLocation[] = [];
     acquiredDateDp: any;
 
     mineralFilter = new FormControl();
@@ -45,6 +48,7 @@ export class SpecimenUpdateComponent implements OnInit {
         fluorescent: [],
         statusId: [],
         locationId: [],
+        storageLocationId: [],
         minerals: []
     } );
 
@@ -53,6 +57,7 @@ export class SpecimenUpdateComponent implements OnInit {
         protected specimenStatusService: SpecimenStatusService,
         protected locationService: LocationService,
         protected mineralService: MineralService,
+        protected storageLocationService: StorageLocationService,
         protected activatedRoute: ActivatedRoute,
         private fb: FormBuilder
     ) { }
@@ -62,10 +67,9 @@ export class SpecimenUpdateComponent implements OnInit {
             this.updateForm( specimen );
 
             this.specimenStatusService.query().subscribe(( res: HttpResponse<ISpecimenStatus[]> ) => this.onSpecimenStatussesReceived( res.body || [] ) );
-
             this.locationService.query().subscribe(( res: HttpResponse<ILocation[]> ) => ( this.locations = res.body || [] ) );
-
             this.mineralService.query().subscribe(( res: HttpResponse<IMineral[]> ) => this.onMineralsReceived( res.body || [] ) );
+            this.storageLocationService.query().subscribe(( res: HttpResponse<IStorageLocation[]> ) => ( this.storageLocations = res.body || [] ) );
         } );
     }
     
@@ -101,6 +105,7 @@ export class SpecimenUpdateComponent implements OnInit {
             remark: specimen.remark,
             fluorescent: specimen.fluorescent,
             statusId: specimen.statusId,
+            storageLocationId: specimen.storageLocationId,
             locationId: specimen.locationId,
             minerals: specimen.minerals
         } );
@@ -133,6 +138,7 @@ export class SpecimenUpdateComponent implements OnInit {
             remark: this.editForm.get( ['remark'] )!.value,
             fluorescent: this.editForm.get( ['fluorescent'] )!.value,
             statusId: this.editForm.get( ['statusId'] )!.value,
+            storageLocationId: this.editForm.get(['storageLocationId'])!.value,
             locationId: this.editForm.get( ['locationId'] )!.value,
             minerals: this.editForm.get( ['minerals'] )!.value
         };

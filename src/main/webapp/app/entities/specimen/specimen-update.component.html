@@ -6,12 +6,12 @@
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
-
-                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                <!--
+                 <div class="form-group" [hidden]="!editForm.get('id')!.value">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
                     <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
                 </div>
-
+ -->
                 <div class="row">
                     <div class="col-7">
                         <h4>Basis informatie</h4>
@@ -49,6 +49,18 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="rockstockApp.specimen.storageLocation"
+                                for="field_storageLocation">Storage Location</label>
+                            <select class="form-control" id="field_storageLocation" name="storageLocation"
+                                formControlName="storageLocationId">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="storageLocationOption.id"
+                                    *ngFor="let storageLocationOption of storageLocations; trackBy: trackById">{{
+                                    storageLocationOption.name }}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-control-label" jhiTranslate="rockstockApp.specimen.remark"
                                 for="field_remark">Remark</label>
                             <input type="textarea" class="form-control" name="remark" id="field_remark"
@@ -61,6 +73,7 @@
                             <input type="checkbox" name="fluorescent" id="field_fluorescent"
                                 formControlName="fluorescent" />
                         </div>
+
                     </div>
 
                     <div class="col-5" style="border-left: 1px solid #ced4da;">
@@ -154,6 +167,8 @@
                             formControlName="acquiredFrom" />
                     </div>
                 </div>
+                
+                <hr/>
 
                 <div>
                     <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">

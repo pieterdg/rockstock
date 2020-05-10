@@ -9,16 +9,19 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link Specimen} and its DTO {@link SpecimenDTO}.
  */
-@Mapper(componentModel = "spring", uses = {SpecimenStatusMapper.class, LocationMapper.class, MineralMapper.class})
+@Mapper(componentModel = "spring", uses = {SpecimenStatusMapper.class, StorageLocationMapper.class, LocationMapper.class, MineralMapper.class})
 public interface SpecimenMapper extends EntityMapper<SpecimenDTO, Specimen> {
 
     @Mapping(source = "status.id", target = "statusId")
     @Mapping(source = "status.name", target = "statusName")
+    @Mapping(source = "storageLocation.id", target = "storageLocationId")
+    @Mapping(source = "storageLocation.name", target = "storageLocationName")
     @Mapping(source = "location.id", target = "locationId")
     @Mapping(source = "location.shortName", target = "locationShortName")
     SpecimenDTO toDto(Specimen specimen);
 
     @Mapping(source = "statusId", target = "status")
+    @Mapping(source = "storageLocationId", target = "storageLocation")
     @Mapping(source = "locationId", target = "location")
     @Mapping(target = "removeMinerals", ignore = true)
     @Mapping(target = "series", ignore = true)

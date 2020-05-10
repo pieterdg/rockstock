@@ -60,6 +60,10 @@ public class Specimen implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("specimen")
+    private StorageLocation storageLocation;
+
+    @ManyToOne
+    @JsonIgnoreProperties("specimen")
     private Location location;
 
     @ManyToMany
@@ -198,6 +202,19 @@ public class Specimen implements Serializable {
 
     public void setStatus(SpecimenStatus specimenStatus) {
         this.status = specimenStatus;
+    }
+
+    public StorageLocation getStorageLocation() {
+        return storageLocation;
+    }
+
+    public Specimen storageLocation(StorageLocation storageLocation) {
+        this.storageLocation = storageLocation;
+        return this;
+    }
+
+    public void setStorageLocation(StorageLocation storageLocation) {
+        this.storageLocation = storageLocation;
     }
 
     public Location getLocation() {

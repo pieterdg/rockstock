@@ -19,6 +19,7 @@
         "location": "Location",
         "country": "Country",
         "specimenStatus": "Specimen Status",
+        "storageLocation": "Storage Location",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

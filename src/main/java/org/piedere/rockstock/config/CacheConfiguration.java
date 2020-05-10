@@ -56,6 +56,7 @@ public class CacheConfiguration {
             createCache(cm, org.piedere.rockstock.domain.NickelStrunzLevelThree.class.getName());
             createCache(cm, org.piedere.rockstock.domain.Location.class.getName());
             createCache(cm, org.piedere.rockstock.domain.Country.class.getName());
+            createCache(cm, org.piedere.rockstock.domain.StorageLocation.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

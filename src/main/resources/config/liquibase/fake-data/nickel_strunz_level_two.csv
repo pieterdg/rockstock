@@ -1,11 +1,72 @@
 id;code;name;parent_id
-1;Table;Automotive 24/7;1
-2;Borders;real-time;2
-3;Liaison Central Berkshire;Small Metal Gloves olive;3
-4;card;Awesome channels transmitter;4
-5;Handcrafted Granite Pants Incredible Buckinghamshire;Frozen Beauty;5
-6;Way Intranet;wireless;6
-7;Industrial Money Market Account Center;virtual PCI;7
-8;backing up Plastic;haptic Operations;8
-9;open-source;Intelligent;9
-10;Maine proactive IB;Checking Account wireless Credit Card Account;10
+1;A;Metals and Intermetallic Alloys;1
+2;B;Metallic Carbides, Silicides, Nitrides and Phosphides;1
+3;C;Metalloids and Nonmetals;1
+4;D;Nonmetallic Carbides and Nitrides;1
+5;A;Alloys;2
+6;B;Metal Sulfides, M: S > 1: 1 (mainly 2: 1);2
+7;C;Metal Sulfides, M: S = 1: 1 (and similar);2
+8;D;Metal Sulfides, M: S = 3 :4 and 2:3;2
+9;E;Metal Sulfides, M: S <= 1:2;2
+10;F;"Sulfides of arsenic, alkalies; sulfides with halide, oxide, hydroxide, H2O";2
+11;G;Sulfarsenites, sulfantimonites, sulfbismuthites;2
+12;H;Sulfosalts of SnS archetype;2
+13;J;Sulfosalts of PbS archetype;2
+14;K;Sulfarsenates, Sulfantimonates;2
+15;L;Unclassified Sulfosalts;2
+16;M;Oxysulfosalts;2
+17;A;Simple halides, without H2O;3
+18;B;Simple halides, with H2O;3
+19;C;Complex halides;3
+20;D;Oxyhalides, hydroxyhalides and related double halides;3
+21;A;Metal: Oxygen = 2:1 and 1:1;4
+22;B;Metal: Oxygen = 3:4 and similar;4
+23;C;Metal: Oxygen = 2: 3,3: 5, and similar;4
+24;D;Metal: Oxygen = 1:2 and similar;4
+25;E;Metal: Oxygen = < 1 :2;4
+26;F;Hydroxides (without V or U);4
+27;G;Uranyl Hydroxides;4
+28;H;V[5,6] Vanadates;4
+29;J;"Arsenites, antimonites, bismuthites, sulfites, selenites, tellurites; iodates";4
+30;K;Iodates: Trigonal [IO3] pyramids (mostly).;4
+31;A;Carbonates without additional anions, without H2O;5
+32;B;Carbonates with additional anions, without H2O;5
+33;C;Carbonates without additional anions, with H2O;5
+34;D;Carbonates with additional anions, with H2O;5
+35;E;Uranyl Carbonates;5
+36;N;NITRATES;5
+37;A;Monoborates;6
+38;B;Diborates;6
+39;C;Triborates;6
+40;D;Tetraborates;6
+41;E;Pentaborates;6
+42;F;Hexaborates;6
+43;G;Heptaborates and other megaborates;6
+44;H;Unclassified borates;6
+45;A;Sulfates (selenates, etc.) without additional anions, without H2O;7
+46;B;Sulfates (selenates, etc.) with additional anions, without H2O;7
+47;C;Sulfates (selenates, etc.) without additional anions, with H2O;7
+48;D;Sulfates (selenates, etc.) with additional anions, with H2O;7
+49;E;Uranyl sulfates;7
+50;F;Chromates;7
+51;G;Molybdates, Wolframates and Niobates;7
+52;H;Uranium and uranyl molybdates and wolframates;7
+53;J;Thiosulfates;7
+54;A;Phosphates, etc. without additional anions, without H2O;8
+55;B;Phosphates, etc., with additional anions, without H2O;8
+56;C;Phosphates without additional anions, with H2O;8
+57;D;Phosphates, etc. with additional anions, with H2O;8
+58;E;Uranyl phosphates and arsenates;8
+59;F;Polyphosphates, Polyarsenates, [4]-Polyvanadates;8
+60;A;Nesosilicates;9
+61;B;Sorosilicates;9
+62;C;Cyclosilicates;9
+63;D;Inosilicates;9
+64;E;Phyllosilicates;9
+65;F;Tektosilicates without zeolitic H2O;9
+66;G;"Tektosilicates with zeolitic H2O; zeolite family";9
+67;H;Unclassified silicates;9
+68;J;Germanates;9
+69;A;Salts of organic acids;10
+70;B;Hydrocarbons;10
+71;C;Miscellaneous Organic Minerals;10

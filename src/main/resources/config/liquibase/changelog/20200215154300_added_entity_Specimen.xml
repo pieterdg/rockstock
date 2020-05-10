@@ -42,6 +42,9 @@
             <column name="status_id" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="storage_location_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <column name="location_id" type="bigint">
                 <constraints nullable="true" />
             </column>

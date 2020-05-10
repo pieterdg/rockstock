@@ -32,6 +32,7 @@
                     <th scope="col"  jhiSortBy="remark"><span jhiTranslate="rockstockApp.specimen.remark">Remark</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fluorescent"><span jhiTranslate="rockstockApp.specimen.fluorescent">Fluorescent</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="statusName"><span jhiTranslate="rockstockApp.specimen.status">Status</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="storageLocationName"><span jhiTranslate="rockstockApp.specimen.storageLocation">Storage Location</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="locationShortName"><span jhiTranslate="rockstockApp.specimen.location">Location</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
@@ -50,6 +51,11 @@
                     <td>
                         <div *ngIf="specimen.statusId">
                             <a [routerLink]="['/specimen-status', specimen.statusId , 'view']" >{{ specimen.statusName }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="specimen.storageLocationId">
+                            <a [routerLink]="['/storage-location', specimen.storageLocationId , 'view']" >{{ specimen.storageLocationName }}</a>
                         </div>
                     </td>
                     <td>

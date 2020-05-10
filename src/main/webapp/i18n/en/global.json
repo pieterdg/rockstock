@@ -19,6 +19,7 @@
         "nickelStrunzLevelThree": "Nickel Strunz Level Three",
         "location": "Location",
         "country": "Country",
+        "storageLocation": "Storage Location",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
