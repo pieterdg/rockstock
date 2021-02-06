@@ -1,0 +1,10 @@
+{
+	"rockTools": {
+		"title": "Admin tools for real rockers",
+		"import": "Import specimen and/or locations",
+		"selectFile": "Select file",
+		"importLocations": "Import locations?",
+		"importSpecimen": "Import specimen?",
+		"upload": "Upload"
+	}
+}

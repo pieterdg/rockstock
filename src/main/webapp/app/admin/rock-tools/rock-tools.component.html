@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <h2>
+            <span id="rock-tools-page-heading" jhiTranslate="rockTools.title">Admin tools for real rockers</span>
+        </h2>
+
+        <div>
+            <jhi-alert-error></jhi-alert-error>
+
+            <form name="importForm" role="form" novalidate (ngSubmit)="importFile()" [formGroup]="importForm">
+                <div class="form-group">
+                    <h4 class="mt-4 mb-2" jhiTranslate="rockTools.import">Import specimen and/or locations</h4>
+
+                    <hr class="mt-2 mb-2">
+
+                    <div class="form-group">
+                        <div>
+                            <label class="form-control-label" jhiTranslate="rockTools.selectFile"
+                                class="font-weight-bold" style="width: 200px;">Select file:</label>
+                            <input type="file" id="file_data" (change)="setFileData($event, 'data', false)" />
+                        </div>
+
+                        <input type="hidden" class="form-control" name="data" id="field_data" formControlName="data" />
+                        <input type="hidden" class="form-control" name="dataContentType" id="field_dataContentType"
+                            formControlName="dataContentType" />
+
+                        <div
+                            *ngIf="importForm.get('data')!.invalid && (importForm.get('data')!.dirty || importForm.get('data')!.touched)">
+                            <small class="form-text text-danger" *ngIf="importForm.get('data')?.errors?.required"
+                                jhiTranslate="entity.validation.required">This field is required.</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="rockTools.importLocations"
+                            class="font-weight-bold" style="width: 200px;">Import locations?</label>
+                        <input type="checkbox" name="importLocations" id="field_importLocations" checked
+                            formControlName="importLocations" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="rockTools.importSpecimen"
+                            class="font-weight-bold" style="width: 200px;">Import specimen?</label>
+                        <input type="checkbox" name="importSpecimen" id="field_importSpecimen" checked
+                            formControlName="importSpecimen" />
+                    </div>
+
+                    <hr class="mt-2 mb-2">
+
+                    <div>
+                        <button type="submit" id="save-entity" class="btn btn-primary">
+                            <fa-icon icon="save"></fa-icon>
+                            &nbsp;<span jhiTranslate="rockTools.upload">Upload</span>
+                        </button>
+                        <span>{{ saveText }}</span>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
