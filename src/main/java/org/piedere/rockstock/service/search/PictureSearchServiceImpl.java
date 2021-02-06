@@ -18,7 +18,7 @@ import javax.persistence.PersistenceContext;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Projections;
 import org.piedere.rockstock.domain.Location;
 import org.piedere.rockstock.domain.Mineral;
 import org.piedere.rockstock.domain.Picture;
@@ -129,29 +129,28 @@ public class PictureSearchServiceImpl implements PictureSearchService {
 	@Override
 	public PictureDTO getRandomPicture() {
 		// Session session = sessionFactory.openSession();
+//		Session session = getCurrentSession();
+//		Criteria criteria = session.createCriteria(Picture.class);
+//		criteria.add(Restrictions.eq("id", Long.valueOf(1)));
+//		criteria.add(Restrictions.sqlRestriction("1=1 order by rand()"));
+//		criteria.setMaxResults(1);
+//		List<Picture> pictures = criteria.list();
+//		if (pictures != null && pictures.size() > 0) {
+//			return pictureMapper.toDto(pictures.get(0));
+//		}
+//		return null;
+
 		Session session = getCurrentSession();
-		Criteria criteria = session.createCriteria(Picture.class);
-		criteria.add(Restrictions.eq("id", Long.valueOf(1)));
-		criteria.add(Restrictions.sqlRestriction("1=1 order by rand()"));
-		criteria.setMaxResults(1);
-		List<Picture> pictures = criteria.list();
-		if (pictures != null && pictures.size() > 0) {
-			return pictureMapper.toDto(pictures.get(0));
+		Criteria crit = session.createCriteria(Picture.class);
+		crit.setProjection(Projections.rowCount());
+		int count = ((Number) crit.uniqueResult()).intValue();
+		if (0 != count) {
+			int index = new Random().nextInt(count);
+			crit = session.createCriteria(Picture.class);
+			Picture picture = (Picture) crit.setFirstResult(index).setMaxResults(1).uniqueResult();
+			return pictureMapper.toDto(picture);
 		}
 		return null;
-
-//		Criterion restriction = yourRestrictions;
-//		Object result = null;  // will later contain a random entity
-//		Criteria crit = session.createCriteria(Picture.class);
-//		crit.add(restriction);
-//		crit.setProjection(Projections.rowCount());
-//		int count = ((Number) crit.uniqueResult()).intValue();
-//		if (0 != count) {
-//		  int index = new Random().nextInt(count);
-//		  crit = session.createCriteria(Picture.class);
-//		  crit.add(restriction);
-//		  result = crit.setFirstResult(index).setMaxResults(1).uniqueResult();
-//		}
 	}
 
 	private Session getCurrentSession() {

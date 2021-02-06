@@ -5,7 +5,7 @@
         <div *ngIf="randomPicture">
             <a [routerLink]="['/picture', randomPicture?.id, 'view']"> <img
                 [src]="'data:' + randomPicture.dataContentType + ';base64,' + randomPicture.data"
-                style="max-height: 500px; max-width: 100%;" alt="picture image" />
+                style="max-height: 500px; max-width: 100%;" alt="Random picture" />
             </a>
         </div>
     </div>

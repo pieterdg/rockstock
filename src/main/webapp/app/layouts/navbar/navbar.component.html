@@ -153,6 +153,12 @@
                             <span jhiTranslate="global.menu.admin.database">Database</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" href='admin/rock-tools' (click)="collapseNavbar()">
+                            <fa-icon icon="wrench" fixedWidth="true"></fa-icon>
+                            <span jhiTranslate="global.menu.admin.rockTools">Rock tools</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" *ngIf="languages && languages.length > 1">

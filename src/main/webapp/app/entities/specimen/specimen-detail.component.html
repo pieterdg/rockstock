@@ -10,7 +10,7 @@
 
             <jhi-alert-error></jhi-alert-error>
 
-            <div *ngIf="pictures" class="d-block">
+            <div *ngIf="pictures.length > 0; else noPictures" class="d-block">
                 <div style="height: 270px; background: #e4e5e6; padding: 10px; overflow-x: overlay;" class="d-flex">
                     <a *ngFor="let picture of pictures; let last = last" class="mx-2"
                         [routerLink]="['/picture', picture?.id, 'view']"> <img
@@ -19,6 +19,11 @@
                     </a>
                 </div>
             </div>
+            <ng-template #noPictures>
+            <div jhiTranslate="rockstockApp.picture.home.notFound">No pictures found.</div>
+            </ng-template>
+
+
 
             <h4 class="mt-4 mb-2">
                 <span jhiTranslate="global.about">About</span> <span>{{ specimen.code }}</span>
